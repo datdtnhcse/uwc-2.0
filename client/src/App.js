@@ -1,8 +1,19 @@
 import './App.css';
-import logo from './assets/img/HCMUTLOGO.png'
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from "react-router-dom";
+import Login from "./pages/Login"
+import Overview from './pages/Overview';
 function App() {
   return (
-    <img src= {logo}></img>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login/>} />
+        <Route path="/overview" element={<Overview/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
