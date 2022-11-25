@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "location": "3/31, Ấp Bình Đường 1, Phường An Bình, Thành phố Dĩ An, Tỉnh Bình Dương",
+        "capacity": 58
+    },
+    {
+        "id": 2,
+        "location": "3/31, Ấp Bình Đường 1, Phường An Bình, Thành phố Dĩ An, Tỉnh Bình Dương",
+
+        "capacity": 87
+    },
+    {
+        "id": 3,
+        "location": "3/31, Ấp Bình Đường 1, Phường An Bình, Thành phố Dĩ An, Tỉnh Bình Dương",
+
+        "capacity": 15
+    },
+    {
+        "id": 4,
+        "location": "3/31, Ấp Bình Đường 1, Phường An Bình, Thành phố Dĩ An, Tỉnh Bình Dương",
+        "capacity": 99
+    },
+    {
+        "id": 5,
+        "location": "3/31, Ấp Bình Đường 1, Phường An Bình, Thành phố Dĩ An, Tỉnh Bình Dương",
+        "capacity": 63
+    },
+    {
+        "id": 6,
+        "location": "3/31, Ấp Bình Đường 1, Phường An Bình, Thành phố Dĩ An, Tỉnh Bình Dương",
+        "capacity": 2
+    }
+]
