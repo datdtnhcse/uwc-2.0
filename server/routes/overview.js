@@ -1,9 +1,10 @@
 var express = require("express");
 var router = express.Router();
 
-/* GET users listing. */
+// cứ để / như bthg, file app.js sẽ prefix các route trong file này bằng /overview
+
 router.get("/", function (req, res, next) {
-    res.send("respond with a resource");
+    res.json({ data: "konnichiwa!" });
 });
 
 module.exports = router;
