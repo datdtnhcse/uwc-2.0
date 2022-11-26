@@ -1,7 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
-// cứ để / như bthg, file app.js sẽ prefix các route trong file này bằng /overview
+// just use / here
+// app.js will prefix the routes in this file with /overview
 
 router.get("/", function (req, res, next) {
     res.json({ data: "konnichiwa!" });
