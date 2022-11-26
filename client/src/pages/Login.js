@@ -9,7 +9,7 @@ export default function Login() {
                         <div class="card-body p-0">
                             <div class="row no-gutters">
 
-                                <div class="col-lg-6 d-none d-lg-inline-block">
+                                <div class="col-lg-7 d-none d-lg-inline-block">
                                     {/* <div class="account-block rounded-right">
                                         <div class="overlay rounded-right"></div>
                                         <div class="account-testimonial">
@@ -21,7 +21,7 @@ export default function Login() {
                                     <img src={logo}></img>
                                 </div>
 
-                                <div class="col-lg-6">
+                                <div class="col-lg-5">
                                     <div class="p-5">
                                         <div class="mb-5">
                                             <h2 class="h2 font-weight-bold text-theme">Đăng nhập</h2>
