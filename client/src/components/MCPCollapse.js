@@ -1,15 +1,17 @@
-import data from "../mockup_data/overview.json"
+import data from "../mockup_data/overviewMCP.json"
 import { PieChart } from 'react-minimal-pie-chart';
 import './MCPCard.css'
+
 function MCPCard({ data }) {
+
     let fill = ""
-    if (data.capacity >= 80 ) {
+    if (data.capacity >= 80) {
         fill = "#F31313"
-    }  
+    }
     else fill = "#72AB94"
     return (
         <div className="d-flex justify-content-between rounded-2 border-success border">
-            <div className ="p-5 col-8 justify-content-between font-weight-bold">
+            <div className="p-5 col-8 justify-content-between font-weight-bold">
                 <div>
                     <strong>#MCP {data.id}</strong>
                 </div>
@@ -17,15 +19,16 @@ function MCPCard({ data }) {
                     {data.location}
                 </div>
             </div>
-            <div className ="col-4">
+            <div className="col-4">
                 <PieChart
                     startAngle={-90}
-                    radius = {40}
+                    radius={40}
                     data={[{ value: data.capacity, color: fill }]}
                     totalValue={100}
                     lineWidth={35}
                     label={({ dataEntry }) => dataEntry.value}
                     labelStyle={{
+                        fontWeight: 'bold',
                         fontSize: '25px',
                         fontFamily: 'sans-serif',
                         fill: fill,
@@ -37,6 +40,9 @@ function MCPCard({ data }) {
     )
 }
 export default function MCPCollapse() {
+    data = data.sort(function (a, b) {
+        return b.capacity - a.capacity;
+    })
     return (
         <div className="d-flex row justify-content-between g-5 ">
             {data.map(
