@@ -34,7 +34,7 @@ export default function Overview() {
                 </Button>
                 <Collapse in={depotstatus}>
                     <div id="depot">
-                        <DepotCollapse />
+                        <DepotCollapse itemsPerPage={4}/>
                     </div>
                 </Collapse>
             </div>
