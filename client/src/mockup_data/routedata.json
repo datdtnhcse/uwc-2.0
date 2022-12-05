@@ -1,0 +1,31 @@
+[
+    {
+        "routeID": 1,
+        "routeName": "Route#1",
+        "fromDepot": {
+            "depotID": 3,
+            "depotName": "Depot3"
+        },
+        "toGTC": {
+            "GTCID": 1,
+            "GTCName": "GTC1"
+        },
+        "routeOfMCPsID": [5, 4, 6, 2, 3],
+        "status": "1"
+    },
+
+    {
+        "routeID": 2,
+        "routeName": "Route#2",
+        "fromDepot": {
+            "depotID": 2,
+            "depotName": "Depot2"
+        },
+        "toGTC": {
+            "GTCID": 1,
+            "GTCName": "GTC1"
+        },
+        "routeofMCPsID": [6,2,5,1,7],
+        "status": "0"
+    }
+]
