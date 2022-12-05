@@ -1,0 +1,13 @@
+.navbar {
+    background: #72ab94;
+}
+
+.nav-link {
+    color: white;
+}
+
+img {
+    width: 5%;
+    background-color: white;
+    border-radius: 50%;
+}
