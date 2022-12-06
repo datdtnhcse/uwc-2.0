@@ -90,7 +90,7 @@ export default function CreatedRoute() {
                                 <Card.Text>
                                     <div>From: MCP#{firstEle}</div>
                                     <div>To: MCP#{lastEle}</div>
-                                    <div>Depot assigned: DepotID {o.fromDepot.depotID}</div>
+                                    {/* <div>Depot assigned: DepotID {o.fromDepot.depotID}</div> */}
                                 </Card.Text>
                                 <Button onClick={handleDeleteRoute()} variant="primary">Delete Route</Button>
                                 <Button onClick={handleAssign()} variant="primary">Assign</Button>
