@@ -1,134 +1,50 @@
 [
     {
-        "depotName" : "Depot1",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "0"
+        "depotName": "Depot2",
+        "location": "Hogwart University",
+        "vehicleList": [
+            {
+                "id": 1,
+                "driver": "Hermione Granger",
+                "brand": "Broomstick",
+                "status": "1"
+            },
+            {
+                "id": 2,
+                "driver": "Hermione Granger",
+                "brand": "Broomstick",
+                "status": "1"
+            },
+            {
+                "id": 3,
+                "driver": "Hermione Granger",
+                "brand": "Broomstick",
+                "status": "1"
             }
-        }
+        ]
     },
     {
-        "depotName" : "Depot2",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "1"
+        "depotName": "Depot2",
+        "location": "Hogwart University",
+        "vehicleList": [
+            {
+                "id": 1,
+                "driver": "Hermione Granger",
+                "brand": "Broomstick",
+                "status": "1"
+            },
+            {
+                "id": 2,
+                "driver": "Hermione Granger",
+                "brand": "Broomstick",
+                "status": "1"
+            },
+            {
+                "id": 3,
+                "driver": "Hermione Granger",
+                "brand": "Broomstick",
+                "status": "1"
             }
-        }
-    },
-    {
-        "depotName" : "Depot3",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "2"
-            }
-        }
-    },
-    {
-        "depotName" : "Depot4",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "3"
-            }
-        }
-    },
-    {
-        "depotName" : "Depot5",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "0"
-            }
-        }
-    },
-    {
-        "depotName" : "Depot6",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "1"
-            }
-        }
-    },
-    {
-        "depotName" : "Depot7",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "2"
-            }
-        }
-    },
-    {
-        "depotName" : "Depot8",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "3"
-            }
-        }
-    },
-    {
-        "depotName" : "Depot9",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "0"
-            }
-        }
-    },
-    {
-        "depotName" : "Depot10",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "1"
-            }
-        }
-    },
-    {
-        "depotName" : "Depot11",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "2"
-            }
-        }
-    },
-    {
-        "depotName" : "Depot12",
-        "location" : "An Binh, Di An, Binh Duong",
-        "vehicleList" : {
-            "vehicle1" : {
-                "driver" : "Sang Dep Trai",
-                "brand" : "BMW",
-                "status" : "3"
-            }
-        }
+        ]
     }
 ]

@@ -1,6 +1,6 @@
 // import React, { useState, useMemo } from 'react';
 // import Pagination from './Pagination';
-// import data from '../mockup_data/overviewDepot.json';
+import data from '../mockup_data/overviewDepot.json';
 // import '../assets/styles/depot.scss';
 import DepotCard from '../components/DepotCard'
 // let PageSize = 2;
@@ -42,57 +42,7 @@ import DepotCard from '../components/DepotCard'
 //     </>
 //   );
 // }
-const data =
-  [
-    {
-      "depotName": "Depot2",
-      "location": "Hogwart University",
-      "vehicleList": [
-        {
-          "id": 1,
-          "driver": "Hermione Granger",
-          "brand": "Broomstick",
-          "status": "1"
-        },
-        {
-          "id": 2,
-          "driver": "Hermione Granger",
-          "brand": "Broomstick",
-          "status": "1"
-        },
-        {
-          "id": 3,
-          "driver": "Hermione Granger",
-          "brand": "Broomstick",
-          "status": "1"
-        },
-      ]
-    },
-    {
-      "depotName": "Depot2",
-      "location": "Hogwart University",
-      "vehicleList": [
-        {
-          "id": 1,
-          "driver": "Hermione Granger",
-          "brand": "Broomstick",
-          "status": "1"
-        },
-        {
-          "id": 2,
-          "driver": "Hermione Granger",
-          "brand": "Broomstick",
-          "status": "1"
-        },
-        {
-          "id": 3,
-          "driver": "Hermione Granger",
-          "brand": "Broomstick",
-          "status": "1"
-        },
-      ]
-    }
-]
+
 
 export default function DepotCollapse() {
   return (
