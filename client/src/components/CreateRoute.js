@@ -1,6 +1,6 @@
 //Get MCPs for route selection
 
-import data from "../mockup_data/overviewMCP.json";
+// import data from "../mockup_data/overviewMCP.json";
 import { Form, Button, Collapse, ListGroup } from "react-bootstrap";
 import { useState } from "react";
 

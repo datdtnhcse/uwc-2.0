@@ -44,7 +44,7 @@ export default function Routing() {
                         Garbage Treatment Center
                     </Row>
                 </Col>
-                <Col lg={5} id="info">
+                <Col>
                     <Container>
                         <Row className="my-3" id="createRouteConponent">
                             <CreateRoute />
