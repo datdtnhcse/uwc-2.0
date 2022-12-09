@@ -2,7 +2,7 @@ import "../assets/styles/footer.scss"
 
 export default function Footer() {
     return (
-        <div class="mt-5 pt-4 pb-2 footer">
+        <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-xs-12 about-company">
@@ -47,6 +47,6 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }

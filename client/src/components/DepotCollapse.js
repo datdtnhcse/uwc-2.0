@@ -46,7 +46,7 @@ import DepotCard from '../components/DepotCard'
 
 export default function DepotCollapse() {
   return (
-    <div className='d-flex justify-content-around' >
+    <div className='d-flex justify-content-around p-5' >
       {
         data.map(item => {
           return DepotCard(item)

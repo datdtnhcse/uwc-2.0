@@ -1,25 +1,3 @@
-// "depotName": "Depot2",
-//       "location": "Hogwart University",
-//       "vehicleList": [
-//         {
-//           "id": 1,
-//           "driver": "Hermione Granger",
-//           "brand": "Broomstick",
-//           "status": "1"
-//         },
-//         {
-//           "id": 2,
-//           "driver": "Hermione Granger",
-//           "brand": "Broomstick",
-//           "status": "1"
-//         },
-//         {
-//           "id": 3,
-//           "driver": "Hermione Granger",
-//           "brand": "Broomstick",
-//           "status": "1"
-//         },
-//       ]
 export default function DepotCard(data) {
     return (
         <div className="rounded-2 border border-success w-40 p-4">

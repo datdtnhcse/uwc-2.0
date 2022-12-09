@@ -1,6 +1,19 @@
-body {
+main{
+  width: 100vw;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
   font-family: 'Fira Sans';
+  background-color: #f1f1f1;
+  position: relative;
+  padding-bottom: 58px;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
