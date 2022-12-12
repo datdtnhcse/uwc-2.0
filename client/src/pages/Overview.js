@@ -4,37 +4,50 @@ import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import MCPCollapse from "../components/MCPCollapse";
 import DepotCollapse from "../components/DepotCollapse";
+import { BarChartLineFill, GeoFill, TrashFill } from "react-bootstrap-icons";
 export default function Overview() {
     const [mcpstatus, setMcpstatus] = useState(false);
     const [depotstatus, setDepot] = useState(false);
     return (
         <div>
-            <div className="px-5">
+            <div className="m-5 mb-1 p-5 pb-1">
+                
                 <Button
+                    className = "btn-lg"
                     onClick={() => setMcpstatus(!mcpstatus)}
                     aria-controls="mcp"
                     aria-expanded={mcpstatus}
                 >
-                    MCP
+                    <i class="bi-alarm"></i>
+                <span>
+                <TrashFill /> | MCP
+                
+                </span>                    
+
+
                 </Button>
-                <Collapse className ="p-2" in={mcpstatus}>
+                <Collapse className="p-1" in={mcpstatus}>
                     <div id="mcp">
                         <MCPCollapse />
                     </div>
                 </Collapse>
                 {/* break down */}
             </div>
-            <div className="p-5">
-                <Button
+            <div className="m-5 p-5">
+                <Button 
+                    className = "btn-lg"
                     onClick={() => setDepot(!depotstatus)}
                     aria-controls="depot"
                     aria-expanded={depotstatus}
                 >
-                    Depot
+                <span>
+                <GeoFill /> | Depot
+                
+                </span>  
                 </Button>
                 <Collapse in={depotstatus}>
-                    <div id="depot" className='m-5'>
-                        <DepotCollapse itemsPerPage={4}/>
+                    <div id="depot" className='mb-5'>
+                        <DepotCollapse itemsPerPage={4} />
                     </div>
                 </Collapse>
             </div>

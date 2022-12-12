@@ -1,7 +1,7 @@
 export default function DepotCard(data) {
     return (
-        <div className="rounded-2 border border-success w-40 p-4">
-            <div className="p-3 d-flex justify-content-between">
+        <div className="rounded-2 border border-success w- p-4 justify-content-between">
+            <div className="d-flex justify-content-around ">
                 <div className="p-3">
                     <h6>{data.depotName}</h6>
                 </div>
@@ -14,9 +14,30 @@ export default function DepotCard(data) {
                 {
                     data.vehicleList.map(item => {
                         return (
-                            <div className="d-flex justify-content-around border p-3 ">
-                                <h1>{item.id}</h1>
-                                <h1>{item.brand}</h1>
+                            <div className="d-flex justify-content-between border p-3 border-success">
+                                <div className="w-75">
+                                    <strong>Vehicle#{item.id}</strong>
+                                    <br></br>
+                                    {item.brand}
+                                    <br></br>
+                                    {item.driver}
+                                </div>
+                                {
+                                    item.status === 0 ?
+                                        <div className="w-25">
+                                            <div >
+                                                <strong>Status</strong>
+                                            </div>
+                                            Idle
+                                        </div>
+                                        :
+                                        <div className="w-25">
+                                            <div >
+                                                <strong>Status</strong>
+                                            </div>
+                                            On route
+                                        </div>
+                                }
                             </div>
                         )
                     })

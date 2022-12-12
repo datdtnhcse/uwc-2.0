@@ -1,37 +1,37 @@
 [
     {
         "depotName": "Depot2",
-        "location": "Hogwart University",
+        "location": "HCMUT, Ho Chi Minh City, Viet Nam",
         "vehicleList": [
             {
                 "id": 1,
-                "driver": "Hermione Granger",
-                "brand": "Broomstick",
-                "status": "1"
+                "driver": "Du Thanh Dat",
+                "brand": "Toyota",
+                "status": 1
             },
             {
                 "id": 2,
-                "driver": "Hermione Granger",
-                "brand": "Broomstick",
-                "status": "1"
+                "driver": "Sang Vinh Nguyen",
+                "brand": "BMW",
+                "status": 0
             },
             {
                 "id": 3,
-                "driver": "Hermione Granger",
-                "brand": "Broomstick",
-                "status": "1"
+                "driver": "Nguyen Tan Phat",
+                "brand": "Honda",
+                "status": 1
             },
             {
                 "id": 4,
-                "driver": "Hermione Granger",
-                "brand": "Broomstick",
-                "status": "1"
+                "driver": "Binh Khang",
+                "brand": "Suzuki",
+                "status": 0
             },
             {
                 "id": 6,
-                "driver": "Hermione Granger",
-                "brand": "Broomstick",
-                "status": "1"
+                "driver": "Tran Hai",
+                "brand": "Grab Bike",
+                "status": 1
             }
         ]
     },
@@ -43,19 +43,19 @@
                 "id": 1,
                 "driver": "Hermione Granger",
                 "brand": "Broomstick",
-                "status": "1"
+                "status": 0
             },
             {
                 "id": 2,
                 "driver": "Hermione Granger",
                 "brand": "Broomstick",
-                "status": "1"
+                "status": 1
             },
             {
                 "id": 3,
                 "driver": "Hermione Granger",
                 "brand": "Broomstick",
-                "status": "1"
+                "status": 0
             }
         ]
     }
