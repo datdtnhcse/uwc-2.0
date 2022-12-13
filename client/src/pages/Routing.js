@@ -12,11 +12,14 @@ import CreateRoute from "../components/CreateRoute";
 import Button from "react-bootstrap/esm/Button";
 
 export default function Routing() {
+
+
+
     return (
         <Container>
             <Row>
                 <Col lg={5} sm={10} id="map">
-                    <img src={map} alt={"map"} width={450} height={450}></img>
+                    <img src={map} alt={"map"} style={{ width: 450, height: 450 }}></img>
                 </Col>
                 <Col lg={2} sm={2} id="legend">
                     <Row className="my-2">
@@ -44,7 +47,7 @@ export default function Routing() {
                         Garbage Treatment Center
                     </Row>
                 </Col>
-                <Col>
+                <Col lg={5} sm={12}>
                     <Container>
                         <Row className="my-3" id="createRouteConponent">
                             <CreateRoute />

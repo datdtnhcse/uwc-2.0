@@ -39,37 +39,38 @@ export default function CreatedRoute() {
 
     const data = [
         {
-            "routeID": 1,
-            "routeName": "Route#1",
-            "fromDepot": {
-                "depotID": 3,
-                "depotName": "Depot3",
+            routeID: 1,
+            routeName: "Route#1",
+            fromDepot: {
+                depotID: 3,
+                depotName: "Depot3",
             },
-            "toGTC": {
-                "GTCID": 1,
-                "GTCName": "GTC1",
+            toGTC: {
+                GTCID: 1,
+                GTCName: "GTC1",
             },
-            "routeOfMCPsID": [5, 4, 6, 2, 3],
-            "status": "1",
+            routeOfMCPsID: [5, 4, 6, 2, 3],
+            status: "1",
         },
         {
-            "routeID": 2,
-            "routeName": "Route#2",
-            "fromDepot": {
-                "depotID": 2,
-                "depotName": "Depot2",
+            routeID: 2,
+            routeName: "Route#2",
+            fromDepot: {
+                depotID: 2,
+                depotName: "Depot2",
             },
-            "toGTC": {
-                "GTCID": 1,
-                "GTCName": "GTC1",
+            toGTC: {
+                GTCID: 1,
+                GTCName: "GTC1",
             },
-            "routeOfMCPsID": [6, 2, 5, 1, 7],
-            "status": "0",
+            routeOfMCPsID: [6, 2, 5, 1, 7],
+            status: "0",
         },
     ];
 
-    const handleDeleteRoute = e => { }
-    const handleAssign = e => { }
+    const handleDeleteRoute = (e) => {};
+
+    const handleAssign = (e) => {};
     return (
         <>
             <Button
@@ -80,31 +81,40 @@ export default function CreatedRoute() {
                 Created Route
             </Button>
             <Collapse in={open}>
-                <div id ="created-route-collapse">
-                    {
-                        data.map(item => {
-                            var firstEle = item.routeOfMCPsID[0];
-                            var lastEle = item.routeOfMCPsID[item.routeOfMCPsID.length - 1];
-                            return (
-                                <div >
-                                    <Card>
-                                        <Card.Header>{item.routeName}</Card.Header>
-                                        <Card.Body>
-                                            <Card.Text>
-                                                <div>From: MCP#{firstEle}</div>
-                                                <div>To: MCP#{lastEle}</div>
-                                                {/* <div>Depot assigned: DepotID {o.fromDepot.depotID}</div> */}
-                                            </Card.Text>
-                                            <Button onClick={handleDeleteRoute()} variant="primary">Delete Route</Button>
-                                            <Button onClick={handleAssign()} variant="primary">Assign</Button>
-                                        </Card.Body>
-                                    </Card>
-                                    <br></br>
-                                </div>
-                            );
-                        })}
+                <div id="created-route-collapse">
+                    {data.length > 0 ? data.map((item) => {
+                        var firstEle = item.routeOfMCPsID[0];
+                        var lastEle =
+                            item.routeOfMCPsID[item.routeOfMCPsID.length - 1];
+                        return (
+                            <div>
+                                <Card>
+                                    <Card.Header>{item.routeName}</Card.Header>
+                                    <Card.Body>
+                                        <Card.Text>
+                                            <div>From: MCP#{firstEle}</div>
+                                            <div>To: MCP#{lastEle}</div>
+                                            {/* <div>Depot assigned: DepotID {o.fromDepot.depotID}</div> */}
+                                        </Card.Text>
+                                        <Button
+                                            onClick={handleDeleteRoute()}
+                                            variant="primary"
+                                        >
+                                            Delete Route
+                                        </Button>
+                                        <Button
+                                            onClick={handleAssign()}
+                                            variant="primary"
+                                        >
+                                            Assign
+                                        </Button>
+                                    </Card.Body>
+                                </Card>
+                                <br></br>
+                            </div>
+                        );
+                    }) : <div>No route</div>}
                 </div>
-
             </Collapse>
         </>
     );
