@@ -25,7 +25,6 @@ export default function Assign() {
                     <JanitorCollapse />
                 </div>
             </Collapse>
-
         </div>
     )
 }
