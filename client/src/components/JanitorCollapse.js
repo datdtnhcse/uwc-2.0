@@ -1,14 +1,16 @@
-import data from "../mockup_data/janitor.json" assert {type: "json"};
-
 import JanitorCard from "./JanitorCard";
-export default function JanitorCollapse( ){
+import data from "../mockup_data/janitor.json"
+export default function JanitorCollapse() {
     return (
-        <div>
+        <div className="row d-flex justify-content-between">
             {
-                data.map(item => {
-                    JanitorCard(item)
+                data.map((janitor) => {
+                    return (
+                        <JanitorCard data={janitor} />
+                    )
                 })
             }
         </div>
     )
+
 }
