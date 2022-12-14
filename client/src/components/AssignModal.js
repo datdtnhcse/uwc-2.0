@@ -2,7 +2,7 @@ import { Modal, Button } from "react-bootstrap";
 import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
 import data from '../mockup_data/overviewMCP.json'
-
+import '../assets/styles/button.css'
 export default function AssignModal({ id }) {
     const [showModal, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -10,7 +10,7 @@ export default function AssignModal({ id }) {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button className="mybtn" onClick={handleShow}>
                 Assign
             </Button>
             <Modal show={showModal} onHide={handleClose}>
