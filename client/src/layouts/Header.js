@@ -16,10 +16,10 @@ function Header() {
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav" class="d-flex">
           <Nav className="me-auto">
-            <Nav.Link href="home" class="nav-item">Trang chủ</Nav.Link>
-            <Nav.Link href="overview" class="nav-item">Tổng quan</Nav.Link>
-            <Nav.Link href="createroute" class="nav-item">Tạo tuyến</Nav.Link>
-            <Nav.Link href="assign" class="nav-item">Phân ca</Nav.Link>
+            <Nav.Link href="home" class="nav-item t">Trang chủ</Nav.Link>
+            <Nav.Link href="overview" class="nav-item t">Tổng quan</Nav.Link>
+            <Nav.Link href="createroute" class="nav-item t">Tạo tuyến</Nav.Link>
+            <Nav.Link href="assign" class="nav-item t">Phân ca</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
