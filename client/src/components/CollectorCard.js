@@ -1,3 +1,5 @@
+import AssignModal from "./AssignModal";
+
 /*{
     "id": 1,
     "name": "Le Tri Minh",
@@ -14,7 +16,7 @@ export default function CollectorCard({ data }) {
                         data.status === 1 ? <p class="card-text">Status: <span class="badge bg-success">Available</span></p> : <p class="card-text">Status: <span class="badge bg-danger">Unavailable</span></p>
                     }
                     <h5>Nearest Depot: {data.nearest_depot}</h5>
-                    <a href="#" class="btn btn-primary">Assign</a>
+                    <AssignModal/>
                 </div>
             </div>
         </div>
