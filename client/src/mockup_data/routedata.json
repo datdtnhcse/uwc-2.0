@@ -1,11 +1,7 @@
 [
     {
-        "routeID": 1,
-        "routeName": "Route#1",
-        "fromDepot": {
-            "depotID": 1,
-            "depotName": "Depot3"
-        },
+        "routeName": "Route1",
+        "fromDepot": "Depot3",
         "toGTC": {
             "GTCID": 1,
             "GTCName": "GTC1"
@@ -14,12 +10,8 @@
         "status": "1"
     },
     {
-        "routeID": 2,
-        "routeName": "Route#2",
-        "fromDepot": {
-            "depotID": 2,
-            "depotName": "Depot2"
-        },
+        "routeName": "Route2",
+        "fromDepot":  "Depot2",
         "toGTC": {
             "GTCID": 1,
             "GTCName": "GTC1"

@@ -43,6 +43,27 @@ async function main() {
         });
     }
 
+    var collectors = require('../../client/src/mockup_data/collector.json');
+    for (let collector of collectors) {
+        await prisma.collector.create({
+            data: {
+                name: collector.name,
+                nearest_depot: collector.nearest_depot,
+                status: collector.status
+            }
+        });
+    }
+    var janitors = require('../../client/src/mockup_data/janitor.json');
+    for (let janitor of janitors) {
+        await prisma.janitor.create({
+            data: {
+                name: janitor.name,
+                nearest_mcp: janitor.nearest_mcp,
+                status: janitor.status,
+            }
+        });
+    }
+
 
     var gtcs = require('../../client/src/mockup_data/overviewGTC.json');
     for ( let gtc of gtcs){
@@ -57,13 +78,16 @@ async function main() {
      var routes = require('../../client/src/mockup_data/routedata.json');
 
     for (let route of routes) {
+        const fromid = await prisma.depot.findUnique({
+            where: { depotName: route.fromDepot},
+        });
         await prisma.route.create({
             data:{
                 name: route.routeName,
                 status: route.status,
                 fromDepot: {
                     connect: {
-                        id: route.fromDepot.depotID
+                        id : fromid?.id
                     }
                 },
                 togtc: {
@@ -75,12 +99,15 @@ async function main() {
         });
     }
     for (let route of routes) {
+        const id = await prisma.route.findUnique({
+            where: { name: route.routeName },
+        });
         for (let x of route.routeOfMCPsID){
             await prisma.mCPinRoute.create({
                 data:{
                     route:{
                         connect:{
-                            id: route.routeID
+                            id: id?.id
                         }
                     },
                     mcp:{

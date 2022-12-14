@@ -6,9 +6,17 @@ var router = express.Router();
 // app.js will prefix the routes in this file with /overview
 
 router.get("/", async function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
     res.json(await prisma.mCP.findMany({
-        include:{
-            MCPinRoute: true,
+        select:{
+            id: true,
+            location: true,
+            capacity: true,
+            MCPinRoute: {
+                select:{
+                    routeID: true,
+                }
+            }
         }
     }));
 });
