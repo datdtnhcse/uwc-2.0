@@ -14,3 +14,6 @@ Content-Type: application/json
     "mcps": [1,3,4,5],
     "status": "1"
 }
+
+####
+PUT http://localhost:3001/collector/assign/4/2

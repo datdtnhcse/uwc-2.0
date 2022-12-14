@@ -29,7 +29,8 @@ router.get("/", async function (req, res, next) {
                     mcpID: true
                 }
             },
-            status: true
+            status: true,
+            Collector: true
         }
     }));
 });
