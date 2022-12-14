@@ -12,3 +12,63 @@ generator client {
 model Station {
     id Int @id @default(autoincrement())
 }
+
+model MCP {
+    id         Int          @id @default(autoincrement())
+    location   String
+    capacity   Int
+    MCPinRoute MCPinRoute[]
+}
+
+model Employee {
+    id         Int    @id @default(autoincrement())
+    first_name String
+    last_name  String
+    email      String
+    phone      String
+}
+
+model Depot {
+    id        Int       @id @default(autoincrement())
+    depotName String
+    location  String
+    vehicles  Vehicle[]
+    routes    Route[]
+}
+
+model Vehicle {
+    id      Int    @id @default(autoincrement())
+    driver  String
+    brand   String
+    status  Int
+    depotID Int
+    depot   Depot  @relation(fields: [depotID], references: [id])
+}
+
+model GTC {
+    id       Int     @id @default(autoincrement())
+    name     String
+    location String
+    routes   Route[]
+}
+
+model Route {
+    id         Int          @id @default(autoincrement())
+    name       String
+    depotID    Int
+    GTCID      Int
+    fromDepot  Depot        @relation(fields: [depotID], references: [id])
+    togtc      GTC          @relation(fields: [GTCID], references: [id])
+    MCPinRoute MCPinRoute[]
+    status     String
+}
+
+model MCPinRoute {
+    
+    mcpID   Int
+    mcp     MCP   @relation(fields: [mcpID], references: [id])
+    routeID Int
+    route   Route @relation(fields: [routeID], references: [id])
+
+    @@id([mcpID, routeID])
+}
