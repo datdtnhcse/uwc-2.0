@@ -11,3 +11,7 @@ img {
     background-color: white;
     border-radius: 50%;
 }
+
+.t {
+    font-weight: 500 !important;
+}

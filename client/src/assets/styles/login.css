@@ -1,7 +1,8 @@
-body{
-    margin-top:20px;
+body {
+    margin-top: 20px;
     background: #f6f9fc;
 }
+
 .account-block {
     padding: 0;
     background-image: url(https://bootdey.com/img/Content/bg1.jpg);
@@ -10,6 +11,7 @@ body{
     height: 100%;
     position: relative;
 }
+
 .account-block .overlay {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -21,6 +23,7 @@ body{
     right: 0;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 .account-block .account-testimonial {
     text-align: center;
     color: #fff;
@@ -47,4 +50,12 @@ body{
 
 img {
     width: 85%;
+}
+
+.custom {
+    display: block !important;
+    width: 60% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 1% !important;
 }

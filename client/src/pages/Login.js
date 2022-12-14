@@ -20,7 +20,7 @@ export default function Login() {
                         <div className="card-body p-0">
                             <div className="row no-gutters">
                                 <div className="col-lg-7 d-none d-lg-inline-block">
-                                    <img src={logo}></img>
+                                    <img src={logo} className="custom"></img>
                                 </div>
                                 <div className="col-lg-5">
                                     <div className="p-5">

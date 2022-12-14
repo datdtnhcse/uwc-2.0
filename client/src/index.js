@@ -12,6 +12,7 @@ root.render(
     <main>
       <App />
     </main>
+    <div className="flex-grow-1"></div>
     <Footer />
   </React.StrictMode>
 );
