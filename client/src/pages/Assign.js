@@ -13,7 +13,7 @@ export default function Assign() {
         <div>
             <div className="m-5 mb-1 p-5 pb-1">
                 <Button
-                    className="btn-lg mybtn"
+                    className="btn-lg mybtn setwidth"
                     onClick={() => setJanitorstatus(!janitorstatus)}
                     aria-controls="janitor"
                     aria-expanded={janitorstatus}
@@ -33,7 +33,7 @@ export default function Assign() {
 
             <div className="m-5 p-5">
                 <Button
-                    className="mybtn btn-lg "
+                    className="mybtn btn-lg setwidth"
                     onClick={() => setCollectorstatus(!collectorstatus)}
                     aria-controls="collector"
                     aria-expanded={collectorstatus}
