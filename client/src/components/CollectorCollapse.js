@@ -6,7 +6,7 @@ export default function CollectorCollapse() {
             {
                 data.map((collector) => {
                     return (
-                        <JanitorCard data={collector} />
+                        <CollectorCard data={collector} />
                     )
                 })
             }
