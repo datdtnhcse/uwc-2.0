@@ -1,12 +1,25 @@
 import { Modal, Button } from "react-bootstrap";
-import React, { useState } from "react";
+import axios, { formToJSON } from 'axios';
+import React, { useState, useCallback, useEffect } from "react";
 import Form from 'react-bootstrap/Form';
-import data from '../mockup_data/overviewMCP.json'
+//import data from '../mockup_data/overviewMCP.json'
 import '../assets/styles/button.css'
+const api = 'http://localhost:3001/overviewMCP'
+
 export default function AssignModal({ id }) {
     const [showModal, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const [data, setData] = useState([])
+    useEffect(() => {
+        async function fetchMCP() {
+            let response = await fetch(api)
+            response = await response.json()
+            setData(response)
+        }
+        fetchMCP()
+    }, [])
 
     return (
         <>
