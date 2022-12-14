@@ -11,18 +11,18 @@ export default function Overview() {
     return (
         <div>
             <div className="m-5 mb-1 p-5 pb-1">
-                
+
                 <Button
-                    className = "btn-lg"
+                    className="btn-lg"
                     onClick={() => setMcpstatus(!mcpstatus)}
                     aria-controls="mcp"
                     aria-expanded={mcpstatus}
                 >
                     <i class="bi-alarm"></i>
-                <span>
-                <TrashFill /> | MCP
-                
-                </span>                    
+                    <span>
+                        <TrashFill /> | MCP
+
+                    </span>
 
 
                 </Button>
@@ -34,20 +34,21 @@ export default function Overview() {
                 {/* break down */}
             </div>
             <div className="m-5 p-5">
-                <Button 
-                    className = "btn-lg"
+                <Button
+                    className="btn-lg"
                     onClick={() => setDepot(!depotstatus)}
                     aria-controls="depot"
                     aria-expanded={depotstatus}
                 >
-                <span>
-                <GeoFill /> | Depot
-                
-                </span>  
+                    <i class="bi-alarm"></i>
+                    <span>
+                        <GeoFill /> | Depot
+                    </span>
                 </Button>
+
                 <Collapse in={depotstatus}>
                     <div id="depot" className='mb-5'>
-                        <DepotCollapse itemsPerPage={4} />
+                        <DepotCollapse/>
                     </div>
                 </Collapse>
             </div>
