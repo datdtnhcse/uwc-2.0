@@ -8,4 +8,19 @@ router.get("/", async function (req, res, next) {
     res.json(await prisma.collector.findMany());
 });
 
+router.put('/assign/:id/:routeid', async (req, res) => {
+    const { id , routeid } = req.params
+    const Collector = await prisma.collector.update({
+      where: { id: Number(id) },
+      data: {
+        route:{
+            connect:{
+                id: Number(routeid)
+            }
+        }
+    },
+    })
+    res.json(Collector)
+  })
+
 module.exports = router;

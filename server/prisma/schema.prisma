@@ -28,18 +28,20 @@ model Employee {
     phone      String
 }
 
-model Collector{
-    id Int @id @default(autoincrement())
-    name String
+model Collector {
+    id            Int    @id @default(autoincrement())
+    name          String
     nearest_depot String
-    status      Int
+    status        Int
+    routeId       Int? @unique
+    route         Route? @relation(fields: [routeId], references: [id])
 }
 
-model Janitor{
-    id Int @id @default(autoincrement())
-    name String
+model Janitor {
+    id          Int    @id @default(autoincrement())
+    name        String
     nearest_mcp String
-    status Int
+    status      Int
 }
 
 model Depot {
@@ -56,7 +58,7 @@ model Vehicle {
     brand   String
     status  Int
     depotID Int
-    depot   Depot  @relation(fields: [depotID], references: [id] ,onDelete: Cascade)
+    depot   Depot  @relation(fields: [depotID], references: [id], onDelete: Cascade)
 }
 
 model GTC {
@@ -75,10 +77,10 @@ model Route {
     togtc      GTC          @relation(fields: [GTCID], references: [id], onDelete: Cascade)
     MCPinRoute MCPinRoute[]
     status     String
+    Collector  Collector?
 }
 
 model MCPinRoute {
-
     mcpID   Int
     mcp     MCP   @relation(fields: [mcpID], references: [id], onDelete: Cascade)
     routeID Int

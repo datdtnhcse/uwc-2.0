@@ -1,4 +1,5 @@
 var express = require("express");
+const { collector } = require("../prisma");
 const prisma = require("../prisma");
 var router = express.Router();
 
