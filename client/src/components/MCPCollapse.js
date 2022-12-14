@@ -1,6 +1,6 @@
-import data from "../mockup_data/overviewMCP.json"
 import { PieChart } from 'react-minimal-pie-chart';
 import './MCPCard.css'
+import React, { useState, useEffect } from 'react'
 
 function MCPCard({ data }) {
 
@@ -39,10 +39,21 @@ function MCPCard({ data }) {
         </div>
     )
 }
+
 export default function MCPCollapse() {
-    data = data.sort(function (a, b) {
-        return b.capacity - a.capacity;
-    })
+    let [data, setData] = useState([])
+    const api = 'http://localhost:3001/overviewMCP'
+    useEffect(() => {
+        async function fetchMCP() {
+            let response = await fetch(api)
+            response = await response.json()
+            setData(response)
+        }
+        fetchMCP()
+    }, [])
+    // data = data.sort(function (a, b) {
+    //     return b.data.capacity - a.data.capacity;
+    // })
     return (
         <div className="d-flex row justify-content-between g-5 ">
             {data.map(
