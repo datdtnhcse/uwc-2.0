@@ -17,7 +17,7 @@ export default function CollectorCard({ data }) {
                     }
                     <h5>ID: {data.id}</h5>
                     <h5>Nearest Depot: {data.nearest_depot}</h5>
-                    <AssignModal/>
+                    {data.status === 1 ? <AssignModal /> : null}
                 </div>
             </div>
         </div>

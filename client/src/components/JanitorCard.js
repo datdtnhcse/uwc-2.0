@@ -18,7 +18,9 @@ export default function JanitorCard({ data }) {
                     }
                     <h5>ID: {data.id}</h5>
                     <h5>Nearest MCP: {data.nearest_mcp}</h5>
-                    <AssignModal />
+                    {
+                        data.status == 1 ? <AssignModal />: null
+                    }
                 </div>
             </div>
         </div>
