@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 import MCPCollapse from "../components/MCPCollapse";
 import DepotCollapse from "../components/DepotCollapse";
 import { BarChartLineFill, GeoFill, TrashFill } from "react-bootstrap-icons";
+import "../assets/styles/button.css"
+
 export default function Overview() {
     const [mcpstatus, setMcpstatus] = useState(false);
     const [depotstatus, setDepot] = useState(false);
@@ -13,7 +15,7 @@ export default function Overview() {
             <div className="m-5 mb-1 p-5 pb-1">
 
                 <Button
-                    className="btn-lg"
+                    className="btn-lg mybtn"
                     onClick={() => setMcpstatus(!mcpstatus)}
                     aria-controls="mcp"
                     aria-expanded={mcpstatus}
@@ -35,7 +37,7 @@ export default function Overview() {
             </div>
             <div className="m-5 p-5">
                 <Button
-                    className="btn-lg"
+                    className="btn-lg mybtn"
                     onClick={() => setDepot(!depotstatus)}
                     aria-controls="depot"
                     aria-expanded={depotstatus}
