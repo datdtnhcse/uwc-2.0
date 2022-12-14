@@ -18,8 +18,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", require("./routes/index"));
 // TODO: add more router
-// app.use("/overview", ...)
-
+app.use("/overviewMCP", require("./routes/overviewMCP"));
+app.use("/overviewGTC", require("./routes/overviewGTC"));
+app.use("/overviewDepot", require("./routes/overviewDepot"));
+app.use("/data", require("./routes/data"));
+app.use("/routedata", require("./routes/routedata"));
+app.use("/vehicles", require("./routes/vehicles"));
 //
 // EDIT SECTION END
 //
