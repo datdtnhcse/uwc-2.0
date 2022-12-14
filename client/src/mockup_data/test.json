@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "depotName": "Depot2",
+        "location": "HCMUT, Ho Chi Minh City, Viet Nam",
+        "vehicles": [
+            {
+                "id": 1,
+                "driver": "Du Thanh Dat",
+                "brand": "Toyota",
+                "status": 1,
+                "depotID": 1
+            },
+            {
+                "id": 2,
+                "driver": "Sang Vinh Nguyen",
+                "brand": "BMW",
+                "status": 0,
+                "depotID": 1
+            },
+            {
+                "id": 3,
+                "driver": "Nguyen Tan Phat",
+                "brand": "Honda",
+                "status": 1,
+                "depotID": 1
+            },
+            {
+                "id": 4,
+                "driver": "Binh Khang",
+                "brand": "Suzuki",
+                "status": 0,
+                "depotID": 1
+            },
+            {
+                "id": 5,
+                "driver": "Tran Hai",
+                "brand": "Grab Bike",
+                "status": 1,
+                "depotID": 1
+            }
+        ],
+        "routes": [
+            {
+                "id": 1,
+                "name": "Route#1",
+                "depotID": 1,
+                "GTCID": 1,
+                "status": "1"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "depotName": "Depot2",
+        "location": "Hogwart University",
+        "vehicles": [
+            {
+                "id": 6,
+                "driver": "Hermione Granger",
+                "brand": "Broomstick",
+                "status": 0,
+                "depotID": 2
+            },
+            {
+                "id": 7,
+                "driver": "Hermione Granger",
+                "brand": "Broomstick",
+                "status": 1,
+                "depotID": 2
+            },
+            {
+                "id": 8,
+                "driver": "Hermione Granger",
+                "brand": "Broomstick",
+                "status": 0,
+                "depotID": 2
+            }
+        ],
+        "routes": [
+            {
+                "id": 2,
+                "name": "Route#2",
+                "depotID": 2,
+                "GTCID": 1,
+                "status": "0"
+            }
+        ]
+    }
+]

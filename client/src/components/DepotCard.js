@@ -3,16 +3,16 @@ export default function DepotCard(data) {
         <div className="rounded-2 border border-success w- p-4 justify-content-between">
             <div className="d-flex justify-content-around ">
                 <div className="p-3">
-                    <h6>{data.depotName}</h6>
+                    <h6>{data.data.depotName}</h6>
                 </div>
                 <div className="p-3">
-                    <h6>Location: {data.location}</h6>
+                    <h6>Location: {data.data.location}</h6>
                 </div>
             </div>
 
             <div>
                 {
-                    data.vehicleList.map(item => {
+                    data.data.vehicles.map(item => {
                         return (
                             <div className="d-flex justify-content-between border p-3 border-success">
                                 <div className="w-75">
