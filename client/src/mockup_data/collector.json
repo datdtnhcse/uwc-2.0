@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Le Tri Minh",
         "nearest_depot": "Depot#2",
-        "status": 1
+        "status": 0
     },
     {
         "id": 2,

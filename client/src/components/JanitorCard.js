@@ -18,6 +18,8 @@ export default function JanitorCard({ data }) {
                     }
                     <h5>Nearest MCP: {data.nearest_mcp}</h5>
                     <AssignModal />
+                    <h5>ID: {data.id}</h5>
+                    <a href="#" class="btn btn-primary mybtn">Assign</a>
                 </div>
             </div>
         </div>

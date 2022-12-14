@@ -17,6 +17,8 @@ export default function CollectorCard({ data }) {
                     }
                     <h5>Nearest Depot: {data.nearest_depot}</h5>
                     <AssignModal/>
+                    <h5>ID: {data.id}</h5>
+                    <a href="#" class="btn btn-primary mybtn">Assign</a>
                 </div>
             </div>
         </div>
