@@ -15,7 +15,7 @@ export default function Overview() {
             <div className="m-5 mb-1 p-5 pb-1">
 
                 <Button
-                    className="btn-lg mybtn"
+                    className="btn-lg mybtn setwidth"
                     onClick={() => setMcpstatus(!mcpstatus)}
                     aria-controls="mcp"
                     aria-expanded={mcpstatus}
@@ -37,7 +37,7 @@ export default function Overview() {
             </div>
             <div className="m-5 p-5">
                 <Button
-                    className="btn-lg mybtn"
+                    className="btn-lg mybtn setwidth"
                     onClick={() => setDepot(!depotstatus)}
                     aria-controls="depot"
                     aria-expanded={depotstatus}
