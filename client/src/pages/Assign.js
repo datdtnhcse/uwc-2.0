@@ -4,6 +4,7 @@ import { useState } from "react";
 import Collapse from 'react-bootstrap/Collapse';
 import CollectorCollapse from "../components/CollectorCollapse";
 import { Cart, Truck } from "react-bootstrap-icons";
+import "../assets/styles/button.css";
 
 export default function Assign() {
     const [janitorstatus, setJanitorstatus] = useState(false);
@@ -12,7 +13,7 @@ export default function Assign() {
         <div>
             <div className="m-5 mb-1 p-5 pb-1">
                 <Button
-                    className="btn-lg"
+                    className="btn-lg mybtn"
                     onClick={() => setJanitorstatus(!janitorstatus)}
                     aria-controls="janitor"
                     aria-expanded={janitorstatus}
@@ -32,7 +33,7 @@ export default function Assign() {
 
             <div className="m-5 p-5">
                 <Button
-                    className="btn-lg"
+                    className="mybtn btn-lg "
                     onClick={() => setCollectorstatus(!collectorstatus)}
                     aria-controls="collector"
                     aria-expanded={collectorstatus}
