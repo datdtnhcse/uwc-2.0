@@ -1,0 +1,16 @@
+DELETE http://localhost:3001/routedata/del/Route1
+
+###
+POST http://localhost:3001/routedata/add
+Content-Type: application/json
+
+{
+    "name": "HCMUT Company",
+    "from": "Depot3",
+    "to": {
+        "id": 3,
+        "name": "SAD"
+    },
+    "mcps": [1,3,4,5],
+    "status": "1"
+}

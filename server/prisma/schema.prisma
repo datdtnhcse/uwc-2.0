@@ -28,9 +28,23 @@ model Employee {
     phone      String
 }
 
+model Collector{
+    id Int @id @default(autoincrement())
+    name String
+    nearest_depot String
+    status      Int
+}
+
+model Janitor{
+    id Int @id @default(autoincrement())
+    name String
+    nearest_mcp String
+    status Int
+}
+
 model Depot {
     id        Int       @id @default(autoincrement())
-    depotName String
+    depotName String    @unique
     location  String
     vehicles  Vehicle[]
     routes    Route[]
@@ -42,7 +56,7 @@ model Vehicle {
     brand   String
     status  Int
     depotID Int
-    depot   Depot  @relation(fields: [depotID], references: [id])
+    depot   Depot  @relation(fields: [depotID], references: [id] ,onDelete: Cascade)
 }
 
 model GTC {
@@ -54,21 +68,21 @@ model GTC {
 
 model Route {
     id         Int          @id @default(autoincrement())
-    name       String
+    name       String       @unique
     depotID    Int
     GTCID      Int
-    fromDepot  Depot        @relation(fields: [depotID], references: [id])
-    togtc      GTC          @relation(fields: [GTCID], references: [id])
+    fromDepot  Depot        @relation(fields: [depotID], references: [id], onDelete: Cascade)
+    togtc      GTC          @relation(fields: [GTCID], references: [id], onDelete: Cascade)
     MCPinRoute MCPinRoute[]
     status     String
 }
 
 model MCPinRoute {
-    
+
     mcpID   Int
-    mcp     MCP   @relation(fields: [mcpID], references: [id])
+    mcp     MCP   @relation(fields: [mcpID], references: [id], onDelete: Cascade)
     routeID Int
-    route   Route @relation(fields: [routeID], references: [id])
+    route   Route @relation(fields: [routeID], references: [id], onDelete: Cascade)
 
     @@id([mcpID, routeID])
 }

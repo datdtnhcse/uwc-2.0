@@ -1,10 +1,11 @@
 var express = require("express");
+const prisma = require("../prisma");
 var router = express.Router();
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
+
+router.get("/", async function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.json({ data: "konnichiwa!" });
+    res.json(await prisma.collector.findMany());
 });
 
 module.exports = router;
