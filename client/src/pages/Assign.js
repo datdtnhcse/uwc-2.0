@@ -27,4 +27,29 @@ export default function Assign() {
             </Collapse>
         </div>
     )
+
+    const [collectorstatus, setCollectorstatus] = useState(false);
+    return (
+        <div className="p-4">
+            <Button
+                className="btn-lg"
+                onClick={() => setCollectorstatus(!collectorstatus)}
+                aria-controls="collector"
+                aria-expanded={collectorstatus}
+            >
+                <i class="bi-alarm"></i>
+                <span>
+                    {/* <TrashFill /> | MCP */}
+                    Collector
+                </span>
+
+
+            </Button>
+            <Collapse className="p-1" in={collectorstatus}>
+                <div id="collector">
+                    <CollectorCollapse />
+                </div>
+            </Collapse>
+        </div>
+    )
 }

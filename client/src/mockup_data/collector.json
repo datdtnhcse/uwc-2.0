@@ -2,37 +2,37 @@
     {
         "id": 1,
         "name": "Le Tri Minh",
-        "nearest-depot": "Depot#2",
+        "nearest_depot": "Depot#2",
         "status": 1
     },
     {
         "id": 2,
         "name": "Le Tri Minh",
-        "nearest-depot": "Depot#1",
+        "nearest_depot": "Depot#1",
         "status": 1
     },
     {
         "id": 3,
         "name": "Le Tri Minh",
-        "nearest-depot": "Depot#2",
+        "nearest_depot": "Depot#2",
         "status": 1
     },
     {
         "id": 4,
         "name":"Le Tri Minh",
-        "nearest-depot": "Depot#1",
+        "nearest_depot": "Depot#1",
         "status": 1
     },
     {
         "id": 5,
         "name": "Le Tri Minh",
-        "nearest-depot": "Depot#2",
+        "nearest_depot": "Depot#2",
         "status": 1
     },
     {
         "id": 6,
         "name": "Le Tri Minh",
-        "nearest-depot": "Depot#1",
+        "nearest_depot": "Depot#1",
         "status": 1
     }
 ]
