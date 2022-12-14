@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Le Tri Minh",
+        "nearest_mcp": "MCP#6",
+        "status": 1
+    },
+    {
+        "id": 2,
+        "name": "Sang Nguyen Vinh",
+        "nearest_mcp": "MCP#6",
+        "status": 0
+    },
+    {
+        "id": 3,
+        "name": "Nguyen Tan Phat",
+        "nearest_mcp": "MCP#6",
+        "status": 1
+    },
+    {
+        "id": 4,
+        "name":"Tran Thanh Hai",
+        "nearest_mcp": "MCP#6",
+        "status": 0
+    },
+    {
+        "id": 5,
+        "name": "Le Cong Cuong",
+        "nearest_mcp": "MCP#6",
+        "status": 1
+    },
+    {
+        "id": 6,
+        "name": "Du Thanh Dat",
+        "nearest_mcp": "MCP#6",
+        "status": 0
+    }
+]
