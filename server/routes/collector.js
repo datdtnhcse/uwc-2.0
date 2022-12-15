@@ -17,7 +17,8 @@ router.put('/assign/:id/:routeid', async (req, res) => {
             connect:{
                 id: Number(routeid)
             }
-        }
+        },
+        status: 0
     },
     })
     res.json(Collector)
