@@ -32,7 +32,7 @@ export default function CreateRoute() {
 
     const handleMcps = (e) => {
         e.preventDefault();
-        const mcpValue = e.target.value;
+        const mcpValue = parseInt(e.target.value);
         const prevMcps = mcps;
         setMcps([...prevMcps, mcpValue]);
         console.log(mcps);
@@ -70,9 +70,21 @@ export default function CreateRoute() {
             });
             response = await response.json();
             console.log(typeof response);
+            window.location.reload(false);
             // setData(response)
         }
         addRoute();
+
+
+
+        setRouteName("");
+        setFromDepot("");
+        setToGTC({
+            id: 0,
+            name: "",
+        });
+        setMcps([]);
+
     };
 
     const handleReset = (e) => {
