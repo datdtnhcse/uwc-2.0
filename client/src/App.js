@@ -8,6 +8,7 @@ import Login from "./pages/Login"
 import Overview from './pages/Overview';
 import Assign from './pages/Assign';
 import Home from './pages/Home';
+import Routing from './pages/Routing';
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/overview" element={<Overview/>} />
         <Route path="/assign" element={<Assign/>} />
+        <Route path="/createroute" element={<Routing/>} />
       </Routes>
     </BrowserRouter>
   );
