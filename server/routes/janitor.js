@@ -17,7 +17,8 @@ router.put('/assign/:id/:mpcid', async (req, res) => {
             connect:{
                 id: Number(mpcid)
             }
-        }
+        },
+        status: 0
     },
     })
     res.json(janitor)

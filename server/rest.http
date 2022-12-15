@@ -1,4 +1,4 @@
-### Employee
+### Account
 GET http://localhost:3001/account
 ### collector
 GET http://localhost:3001/collector
