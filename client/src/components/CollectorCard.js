@@ -1,4 +1,4 @@
-import AssignModal from "./AssignModal";
+import CollectorModal from "./collectorModal";
 import { Modal, Button } from "react-bootstrap";
 
 /*{
@@ -19,7 +19,7 @@ export default function CollectorCard({ data }) {
                     <h5>ID: {data.id}</h5>
                     <h5>Nearest Depot: {data.nearest_depot}</h5>
                     {
-                        data.status === 1 ? <AssignModal /> : <Button className="abtn"> Assigned </Button>
+                        data.status === 1 ? <CollectorModal /> : <Button className="abtn"> Assigned </Button>
                     }
                 </div>
             </div>
