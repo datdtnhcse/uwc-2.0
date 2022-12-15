@@ -1,74 +1,32 @@
-import data from "../mockup_data/routedata.json";
+// import data from "../mockup_data/routedata.json";
 import Button from "react-bootstrap/button";
 import Card from "react-bootstrap/Card";
 import Collapse from "react-bootstrap/Collapse";
+import axios from "axios";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+const api = 'http://localhost:3001/routedata'
 
-// function CreateRouteCard({ data }) {
-//     return (
-//         <div>
-//             <div>
-//                 <h2>{data.routeName}</h2>
-//             </div>
-//             <div>from: MCP#{data.routeOfMCPsID[0]}</div>
-//             <div>to: MCP#{data.routeOfMCPsID.slice(-1)}</div>
-//             <Button>Delete route</Button>
-//             <Button>Assign depot?</Button>
-//         </div>
-//     );
-// }
 
-// export default function CreatedRoute() {
-//     return (
-//         <div>
-//             {data.map((item) => {
-//                 return (
-//                     <div>
-//                         <CreateRouteCard data={item} />
-//                     </div>
-//                 );
-//             })}
-//         </div>
-//     );
-// }
+function DeleteRoute (name)
+{
+    
+}
 
-// export default function CreatedRoute({ data }) {
 export default function CreatedRoute() {
     const [open, setOpen] = useState(false);
+    // const [deleteFlag, setDeleteFlag] = useState(false);
+    const [data, setData] = useState([]);
 
-    // const data = [
-    //     {
-    //         routeID: 1,
-    //         routeName: "Route#1",
-    //         fromDepot: {
-    //             depotID: 3,
-    //             depotName: "Depot3",
-    //         },
-    //         toGTC: {
-    //             GTCID: 1,
-    //             GTCName: "GTC1",
-    //         },
-    //         routeOfMCPsID: [5, 4, 6, 2, 3],
-    //         status: "1",
-    //     },
-    //     {
-    //         routeID: 2,
-    //         routeName: "Route#2",
-    //         fromDepot: {
-    //             depotID: 2,
-    //             depotName: "Depot2",
-    //         },
-    //         toGTC: {
-    //             GTCID: 1,
-    //             GTCName: "GTC1",
-    //         },
-    //         routeOfMCPsID: [6, 2, 5, 1, 7],
-    //         status: "0",
-    //     },
-    // ];
-
-    const handleDeleteRoute = (e) => {};
+    useEffect(() => {
+        async function fetchRoute() {
+            let response = await fetch(api)
+            response = await response.json()
+            console.log(typeof response)
+            setData(response)
+        }
+        fetchRoute()
+    }, [])
 
     return (
         <>
@@ -81,22 +39,24 @@ export default function CreatedRoute() {
             </Button>
             <Collapse in={open}>
                 <div id="created-route-collapse">
-                    {data.length > 0 ? data.map((item) => {
-                        var firstEle = item.routeOfMCPsID[0];
+                    {data.map((item) => {
+                        console.log(item)
+                        var firstEle = item.MCPinRoute[0].mcpID;
                         var lastEle =
-                            item.routeOfMCPsID[item.routeOfMCPsID.length - 1];
+                            item.MCPinRoute[item.MCPinRoute.length - 1].mcpID;
                         return (
                             <div>
                                 <Card>
-                                    <Card.Header>{item.routeName}</Card.Header>
+                                    <Card.Header>{item.name}</Card.Header>
                                     <Card.Body>
                                         <Card.Text>
                                             <div>From: MCP#{firstEle}</div>
                                             <div>To: MCP#{lastEle}</div>
-                                            {/* <div>Depot assigned: DepotID {o.fromDepot.depotID}</div> */}
+                                            <div>From depot: {item.fromDepot.id}</div>
+                                            <div>To GTC: {item.togtc.id}</div>
                                         </Card.Text>
                                         <Button
-                                            onClick={handleDeleteRoute()}
+                                            onClick={DeleteRoute(item.name)}
                                             variant="primary"
                                         >
                                             Delete Route
@@ -106,7 +66,7 @@ export default function CreatedRoute() {
                                 <br></br>
                             </div>
                         );
-                    }) : <div>No route</div>}
+                    })}
                 </div>
             </Collapse>
         </>

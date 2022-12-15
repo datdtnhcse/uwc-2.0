@@ -2,11 +2,15 @@
 
 import data from "../mockup_data/overviewMCP.json";
 import depotData from "../mockup_data/overviewDepot.json";
+import GTCData from "../mockup_data/overviewGTC.json"
 import { Form, Button, Collapse, ListGroup } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
 // import { List } from "react-bootstrap-icons";
 
-// export default function CreateRoute({ data }) {
+function AddRoute () {
+    
+}
+
 export default function CreateRoute() {
     // var MCParray = [];
     // var GTC = 1;
@@ -19,7 +23,7 @@ export default function CreateRoute() {
     const [routeName, setRouteName] = useState("");
 
     const onMCPadd = (ele) => {
-        // MCParray.push(ele.id);
+        MCParray.push(ele.id);
     };
 
     const handleSubmit = (e) => {
@@ -46,10 +50,10 @@ export default function CreateRoute() {
     };
 
     const handleReset = (e) => {
-        // e.preventDefault();
-        // MCParray = [];
-        // setNewRoute({});
-        // setRouteName("");
+        e.preventDefault();
+        MCParray = [];
+        setNewRoute({});
+        setRouteName("");
     };
 
     return (
@@ -69,8 +73,8 @@ export default function CreateRoute() {
                             {data.length > 0 ? (
                                 data.map((item, i) => (
                                     <ListGroup.Item
-                                        action
-                                        onClick={onaddMCP(item.id)}
+                                        // action
+                                        // onClick={onaddMCP(item.id)}
                                         key={i}
                                     >
                                         {item.id}
@@ -85,11 +89,27 @@ export default function CreateRoute() {
                             {depotData.length > 0 ? (
                                 depotData.map((item, i) => (
                                     <ListGroup.Item
-                                        action
-                                        onClick={(depot = item.depotName)}
+                                        // action
+                                        // onClick={(depot = item.depotName)}
                                         key={i}
                                     >
                                         {item.depotName}
+                                    </ListGroup.Item>
+                                ))
+                            ) : (
+                                <div>No depot</div>
+                            )}
+                        </ListGroup>
+                        <h4>List of GTC</h4>
+                        <ListGroup>
+                            {GTCData.length > 0 ? (
+                                GTCData.map((item, i) => (
+                                    <ListGroup.Item
+                                        // action
+                                        // onClick={(depot = item.depotName)}
+                                        key={i}
+                                    >
+                                        <div>{item.id}</div>
                                     </ListGroup.Item>
                                 ))
                             ) : (
