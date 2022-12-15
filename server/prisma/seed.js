@@ -31,14 +31,15 @@ async function main() {
         });
     }
 
-    var employees = require('../../client/src/mockup_data/data.json');
-    for (let employee of employees) {
-        await prisma.employee.create({
+    var accounts = require('../../client/src/mockup_data/account.json');
+    for (let account of accounts) {
+        await prisma.account.create({
             data: {
-                first_name: employee.first_name,
-                last_name: employee.last_name,
-                email: employee.email,
-                phone: employee.phone,
+                first_name: account.first_name,
+                last_name: account.last_name,
+                email: account.email,
+                phone: account.phone,
+                pass: account.pass,
             }
         });
     }
@@ -49,7 +50,12 @@ async function main() {
             data: {
                 name: collector.name,
                 nearest_depot: collector.nearest_depot,
-                status: collector.status
+                status: collector.status,
+                account: {
+                    connect: {
+                        id: collector.accountId
+                    }
+                }
             }
         });
     }
@@ -60,6 +66,11 @@ async function main() {
                 name: janitor.name,
                 nearest_mcp: janitor.nearest_mcp,
                 status: janitor.status,
+                account: {
+                    connect: {
+                        id: janitor.accountId
+                    }
+                }
             }
         });
     }

@@ -1,5 +1,5 @@
 var express = require("express");
-const { collector } = require("../prisma");
+const { collector, janitor } = require("../prisma");
 const prisma = require("../prisma");
 var router = express.Router();
 
@@ -17,7 +17,8 @@ router.get("/", async function (req, res, next) {
                 select:{
                     routeID: true,
                 }
-            }
+            },
+            Janitor: true,
         }
     }));
 });

@@ -1,6 +1,23 @@
+### Employee
+GET http://localhost:3001/account
+### collector
+GET http://localhost:3001/collector
+### janitor
+GET http://localhost:3001/janitor
+### Depots
+GET http://localhost:3001/overviewDepot
+### Vehicles
+GET http://localhost:3001/vehicles
+### MCPs
+GET http://localhost:3001/overviewMCP
+### GTCs
+GET http://localhost:3001/overviewGTC
+### routedata
+GET http://localhost:3001/routedata
+### Delete route
 DELETE http://localhost:3001/routedata/del/Route1
 
-###
+### Add route (routing)
 POST http://localhost:3001/routedata/add
 Content-Type: application/json
 
@@ -15,5 +32,8 @@ Content-Type: application/json
     "status": "1"
 }
 
-####
-PUT http://localhost:3001/collector/assign/4/2
+#### Assign route
+PUT http://localhost:3001/collector/assign/3/2
+
+#### Assign mcp
+PUT http://localhost:3001/janitor/assign/3/2
