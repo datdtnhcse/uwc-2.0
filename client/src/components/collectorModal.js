@@ -35,11 +35,12 @@ export default function CollectorModal({ id }) {
                 </Modal.Header>
                 <Modal.Body>
                     {
-                        data.map((route) => {
+                        data.map((route, index) => {
                             return (
                                 <Form className="flex">
                                     <Form.Check className="flex"
-                                        type="switch"
+                                        inline
+                                        type="checkbox"
                                         id="custom-switch"
                                     />
                                     <span>Route {route.id}</span>
@@ -47,7 +48,6 @@ export default function CollectorModal({ id }) {
                             )
                         })
                     }
-
 
                 </Modal.Body>
                 <Modal.Footer>
