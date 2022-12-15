@@ -46,10 +46,10 @@ export default function CreateRoute() {
     };
 
     const handleReset = (e) => {
-        e.preventDefault();
-        MCParray = [];
-        setNewRoute({});
-        setRouteName("");
+        // e.preventDefault();
+        // MCParray = [];
+        // setNewRoute({});
+        // setRouteName("");
     };
 
     return (
