@@ -6,6 +6,9 @@ import Form from 'react-bootstrap/Form';
 import '../assets/styles/button.css'
 const api = 'http://localhost:3001/overviewMCP'
 
+//store id of parent component (Janitor or Collector)
+//post request of changing status form 1->0 after click confirm
+
 export default function AssignModal({ id }) {
     const [showModal, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -27,9 +30,6 @@ export default function AssignModal({ id }) {
                 Assign
             </Button>
             <Modal show={showModal} onHide={handleClose}>
-
-                
-
                 <Modal.Header closeButton>
                     <Modal.Title>Phân công công việc</Modal.Title>
                 </Modal.Header>
