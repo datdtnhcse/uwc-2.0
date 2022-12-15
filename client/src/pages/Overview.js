@@ -8,12 +8,14 @@ import { BarChartLineFill, GeoFill, TrashFill } from "react-bootstrap-icons";
 import "../assets/styles/button.css"
 
 export default function Overview() {
+    if (!localStorage.getItem("user")) {
+        window.location.href = "/login";
+    }
     const [mcpstatus, setMcpstatus] = useState(false);
     const [depotstatus, setDepot] = useState(false);
     return (
         <div>
             <div className="m-5 mb-1 p-5 pb-1">
-
                 <Button
                     className="btn-lg mybtn setwidth"
                     onClick={() => setMcpstatus(!mcpstatus)}
@@ -50,7 +52,7 @@ export default function Overview() {
 
                 <Collapse in={depotstatus}>
                     <div id="depot" className='mb-5'>
-                        <DepotCollapse/>
+                        <DepotCollapse />
                     </div>
                 </Collapse>
             </div>
