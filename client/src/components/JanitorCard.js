@@ -19,11 +19,13 @@ export default function JanitorCard({ data }) {
                     }
                     <h5>ID: {data.id}</h5>
                     <h5>Nearest MCP: {data.nearest_mcp}</h5>
+
                     {
                         data.status === 1 ? <AssignModal /> : <Button className="abtn"> Assigned </Button>
                     }
                 </div>
             </div>
+            
         </div>
     )
 }

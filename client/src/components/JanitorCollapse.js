@@ -17,7 +17,6 @@ export default function JanitorCollapse() {
         }
         fetchJanitor()
     }, [])
-
     /*data = data.sort(function (a, b) {
         return b.status - a.status
     })*/
