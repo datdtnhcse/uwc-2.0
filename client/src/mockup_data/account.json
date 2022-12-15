@@ -33,41 +33,41 @@
     },
     {
         "id": 5,
-        "first_name": "Sang",
+        "first_name": "Phat",
         "last_name": "Nguyễn",
-        "email": "svn@hcmut.edu.vn",
+        "email": "phat@hcmut.edu.vn",
         "phone": "596-412-7883",
         "pass": "e10adc3949ba59abbe56e057f20f883e"
     },
     {
         "id": 6,
-        "first_name": "Sang",
+        "first_name": "Tú",
         "last_name": "Nguyễn",
-        "email": "svn@hcmut.edu.vn",
+        "email": "tunguyen@hcmut.edu.vn",
         "phone": "596-412-7883",
         "pass": "e10adc3949ba59abbe56e057f20f883e"
     },
     {
         "id": 7,
-        "first_name": "Sang",
+        "first_name": "Cường",
         "last_name": "Nguyễn",
-        "email": "svn@hcmut.edu.vn",
+        "email": "cuong@hcmut.edu.vn",
         "phone": "596-412-7883",
         "pass": "e10adc3949ba59abbe56e057f20f883e"
     },
     {
         "id": 8,
-        "first_name": "Sang",
-        "last_name": "Nguyễn",
-        "email": "svn@hcmut.edu.vn",
+        "first_name": "Lôc",
+        "last_name": "Tạ",
+        "email": "taloc@hcmut.edu.vn",
         "phone": "596-412-7883",
         "pass": "e10adc3949ba59abbe56e057f20f883e"
     },
     {
         "id": 8,
-        "first_name": "Sang",
+        "first_name": "Khoa",
         "last_name": "Nguyễn",
-        "email": "svn@hcmut.edu.vn",
+        "email": "khoa@hcmut.edu.vn",
         "phone": "596-412-7883",
         "pass": "e10adc3949ba59abbe56e057f20f883e"
     }
