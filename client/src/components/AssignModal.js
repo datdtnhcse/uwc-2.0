@@ -14,8 +14,8 @@ export default function AssignModal({ id }) {
     const [showModal, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [] = useState(false);
 
+    //data = MCP list
     const [data, setData] = useState([])
     useEffect(() => {
         async function fetchMCP() {
@@ -25,6 +25,11 @@ export default function AssignModal({ id }) {
         }
         fetchMCP()
     }, [])
+
+    const [] = useState(false);
+    function Checkbox(){
+
+    }
 
     return (
         <>
@@ -43,9 +48,9 @@ export default function AssignModal({ id }) {
                                     <Form.Check
                                         className="flex"
                                         inline
-                                        type="checkbox"
-                                        id="custom-switch"
-
+                                        type="radio"
+                                        id="custom-radio"
+                                        
                                     />
                                     <span>MCP {mcp.id}</span>
                                 </Form>
@@ -58,6 +63,10 @@ export default function AssignModal({ id }) {
                         Close
                     </Button>
                     <Button variant="success" onClick={handleClose}>
+                        {
+                            axios.put('http://localhost:3001/janitor/assign/3/2')
+
+                        }
                         Confirm
                     </Button>
                 </Modal.Footer>
