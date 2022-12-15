@@ -16,6 +16,8 @@ export default function AssignModal({ id }) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [mcp_id, setMcp] = useState(0);
+
     //data = MCP list
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -27,8 +29,23 @@ export default function AssignModal({ id }) {
         fetchMCP();
     }, []);
 
-    const [] = useState(false);
-    function Checkbox() {}
+    const handleChange = (value) => {
+        setMcp(value);
+    };
+
+    const handleConfirm = async (e) => {
+        e.preventDefault();
+        console.log("janitor" + id)
+
+        try {
+            let data = await axios.put(`${BACKEND_HOST}/janitor/assign/${id}/${mcp_id}`)
+        }
+        catch (err) {
+            alert("")
+            console.log(err)
+        }
+        window.location.reload(false)
+    }
 
     return (
         <>
@@ -40,26 +57,32 @@ export default function AssignModal({ id }) {
                     <Modal.Title>Phân công công việc</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {data.map((mcp, index) => {
-                        return (
-                            <Form className="flex">
-                                <Form.Check
-                                    className="flex"
-                                    inline
-                                    type="radio"
-                                    id="custom-radio"
-                                />
-                                <span>MCP {mcp.id}</span>
-                            </Form>
-                        );
-                    })}
+                    {
+                        data.map((mcp) => {
+                            return (
+                                <Form className="flex">
+                                    <Form.Check
+                                        className="flex"
+                                        inline
+                                        type="checkbox"
+                                        id="custom-box"
+                                        action
+                                            onChange = {(e) => {
+                                                e.preventDefault();
+                                                handleChange(mcp.id)
+                                            }}
+                                    />
+                                    <span>MCP {mcp.id}</span>
+                                </Form>
+                            )
+                        })
+                    }
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="success" onClick={handleClose}>
-                        {axios.put(BACKEND_HOST + "/janitor/assign/3/2")}
+                    <Button variant="success" onClick = {handleConfirm}>
                         Confirm
                     </Button>
                 </Modal.Footer>

@@ -18,11 +18,13 @@ router.post("/check", async function (req, res, next) {
     });
     res.header("Access-Control-Allow-Origin", "*");
     if (result?.pass == MD5(pass)) {
-        res.json(result);
         res.status(200)
+        res.json(result);
+        
     }else{
-        res.json("Thông tin đăng nhập sai cmnr");
         res.status(401)
+        res.json("Thông tin đăng nhập sai cmnr");
+        
     }
 });
 
