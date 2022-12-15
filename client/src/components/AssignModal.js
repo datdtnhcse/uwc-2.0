@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 
 //import data from '../mockup_data/overviewMCP.json'
 import '../assets/styles/button.css';
-const api = 'http://localhost:3001/overviewMCP'
+const api = 'http://localhost:3001/overviewMCP';
 
 //store id of parent component (Janitor or Collector)
 //post request of changing status form 1->0 after click confirm
@@ -14,7 +14,6 @@ export default function AssignModal({ id }) {
     const [showModal, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [] = useState(false);
 
     const [data, setData] = useState([])
     useEffect(() => {
@@ -44,7 +43,7 @@ export default function AssignModal({ id }) {
                                         className="flex"
                                         inline
                                         type="checkbox"
-                                        id="custom-switch"
+                                        id='custom-checkbox'
 
                                     />
                                     <span>MCP {mcp.id}</span>
@@ -58,6 +57,9 @@ export default function AssignModal({ id }) {
                         Close
                     </Button>
                     <Button variant="success" onClick={handleClose}>
+                        {
+                            axios.put("http://localhost:3001/janitor/assign/3/2")
+                        }
                         Confirm
                     </Button>
                 </Modal.Footer>
