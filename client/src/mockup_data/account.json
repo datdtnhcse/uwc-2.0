@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "first_name": "Khang",
+        "last_name": "Nguyễn",
+        "email": "khang@hcmut.edu.vn",
+        "phone": "818-783-1853",
+        "pass": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+        "id": 2,
+        "first_name": "Đạt",
+        "last_name": "Du",
+        "email": "Dat@hcmut.edu.vn",
+        "phone": "666-156-6224",
+        "pass": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+        "id": 3,
+        "first_name": "Hải",
+        "last_name": "Trần",
+        "email": "haitran@hcmut.edu.vn",
+        "phone": "754-548-5689",
+        "pass": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+        "id": 4,
+        "first_name": "Sang",
+        "last_name": "Nguyễn",
+        "email": "svn@hcmut.edu.vn",
+        "phone": "596-412-7883",
+        "pass": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+        "id": 5,
+        "first_name": "Sang",
+        "last_name": "Nguyễn",
+        "email": "svn@hcmut.edu.vn",
+        "phone": "596-412-7883",
+        "pass": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+        "id": 6,
+        "first_name": "Sang",
+        "last_name": "Nguyễn",
+        "email": "svn@hcmut.edu.vn",
+        "phone": "596-412-7883",
+        "pass": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+        "id": 7,
+        "first_name": "Sang",
+        "last_name": "Nguyễn",
+        "email": "svn@hcmut.edu.vn",
+        "phone": "596-412-7883",
+        "pass": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+        "id": 8,
+        "first_name": "Sang",
+        "last_name": "Nguyễn",
+        "email": "svn@hcmut.edu.vn",
+        "phone": "596-412-7883",
+        "pass": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+        "id": 8,
+        "first_name": "Sang",
+        "last_name": "Nguyễn",
+        "email": "svn@hcmut.edu.vn",
+        "phone": "596-412-7883",
+        "pass": "e10adc3949ba59abbe56e057f20f883e"
+    }
+]

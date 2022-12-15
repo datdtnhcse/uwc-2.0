@@ -18,30 +18,40 @@ model MCP {
     location   String
     capacity   Int
     MCPinRoute MCPinRoute[]
+    Janitor    Janitor[]
 }
 
-model Employee {
-    id         Int    @id @default(autoincrement())
+model Account {
+    id         Int        @id @default(autoincrement())
     first_name String
     last_name  String
     email      String
     phone      String
+    pass       String
+    Collector  Collector?
+    Janitor    Janitor?
 }
 
 model Collector {
-    id            Int    @id @default(autoincrement())
+    id            Int      @id @default(autoincrement())
     name          String
     nearest_depot String
     status        Int
-    routeId       Int? @unique
-    route         Route? @relation(fields: [routeId], references: [id])
+    routeId       Int?     @unique
+    route         Route?   @relation(fields: [routeId], references: [id])
+    accountId     Int?     @unique
+    account       Account? @relation(fields: [accountId], references: [id])
 }
 
 model Janitor {
-    id          Int    @id @default(autoincrement())
+    id          Int      @id @default(autoincrement())
     name        String
     nearest_mcp String
     status      Int
+    mpcId       Int?
+    mpc         MCP?     @relation(fields: [mpcId], references: [id])
+    accountId   Int?     @unique
+    account     Account? @relation(fields: [accountId], references: [id])
 }
 
 model Depot {

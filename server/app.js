@@ -13,7 +13,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 //
-// EDIT SECTION 
+// EDIT SECTION
 //
 
 app.use("/", require("./routes/index"));
@@ -21,7 +21,7 @@ app.use("/", require("./routes/index"));
 app.use("/overviewMCP", require("./routes/overviewMCP"));
 app.use("/overviewGTC", require("./routes/overviewGTC"));
 app.use("/overviewDepot", require("./routes/overviewDepot"));
-app.use("/data", require("./routes/data"));
+app.use("/account", require("./routes/account"));
 app.use("/collector", require("./routes/collector"));
 app.use("/janitor", require("./routes/janitor"));
 app.use("/routedata", require("./routes/routedata"));
