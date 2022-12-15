@@ -1,16 +1,27 @@
 import "../assets/styles/login.css"
 import logo from "../assets/img/uwc_logo.png"
 import { useEffect, useState, useRef } from "react";
+import axios from "axios";
 export default function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
+        event.preventDefault();
         const email = emailRef.current.value
         const password = passwordRef.current.value
-        event.preventDefault();
-        if (email == "admin@gmail.com" && password == "admin") {
-            window.location.assign("/overview");
+        try {
+            const { data } = await axios.post("http://localhost:3001/account/check", {
+                email: email,
+                pass: password
+            });
+            if (data != null) {
+                window.location.assign('/home')
+            }
         }
+        catch (err) {
+            console.log(err)
+        }
+
     };
     return (
         <div id="main-wrapper" className="container">
@@ -52,7 +63,7 @@ export default function Login() {
                                                 >
                                                 </input>
                                             </div>
-                                            <button type="submit" className="btn-theme">Đăng nhập</button>
+                                            <button type="submit" className="btn-theme" on>Đăng nhập</button>
                                         </form>
                                     </div>
                                 </div>
