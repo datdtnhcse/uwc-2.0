@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
     "email": "svn@hcmut.edu.vn",
-    "pass": "123456"
+    "pass": "123453"
 }
 ### collector
 GET http://localhost:3001/collector
