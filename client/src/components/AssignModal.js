@@ -38,7 +38,7 @@ export default function AssignModal({ id }) {
         console.log("janitor" + id)
 
         try {
-            let data = await axios.put(`${BACKEND_HOST}/janitor/assign/${id}/${mcp_id}`)
+            await axios.put(`${BACKEND_HOST}/janitor/assign/${id}/${mcp_id}`)
         }
         catch (err) {
             alert("")

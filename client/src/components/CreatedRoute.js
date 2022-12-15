@@ -61,9 +61,9 @@ export default function CreatedRoute() {
                     {data.map((item) => {
                         console.log(item);
                         if (
-                            item.MCPinRoute[0].mcpID == undefined ||
-                            item.MCPinRoute == undefined ||
-                            item.MCPinRoute[item.MCPinRoute.length - 1].mcpID ==
+                            item.MCPinRoute[0].mcpID === undefined ||
+                            item.MCPinRoute === undefined ||
+                            item.MCPinRoute[item.MCPinRoute.length - 1].mcpID ===
                                 undefined
                         ) {
                             return <div>No MCP in this route</div>;

@@ -20,7 +20,7 @@ export default function Login() {
                 pass: password,
             });
             console.log(data.status);
-            if (data.status == 200) {
+            if (data.status === 200) {
                 localStorage.setItem("user", email);
                 window.location.assign("/home");
                 return;
@@ -40,6 +40,7 @@ export default function Login() {
                                 <div className="row no-gutters">
                                     <div className="col-lg-7 d-none d-lg-inline-block">
                                         <img
+                                            alt="my logo"
                                             src={logo}
                                             className="custom"
                                         ></img>

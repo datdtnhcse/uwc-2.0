@@ -37,9 +37,10 @@ function MCPCard({ data }) {
     );
 }
 
+const api = BACKEND_HOST + "/overviewMCP";
+
 export default function MCPCollapse() {
     let [data, setData] = useState([]);
-    const api = BACKEND_HOST + "/overviewMCP";
     useEffect(() => {
         async function fetchMCP() {
             let response = await fetch(api);

@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 //import data from '../mockup_data/overviewMCP.json'
-import "../assets/styles/button.css";
+import axios from "axios";
 import { BACKEND_HOST } from "../api/APIRoutes.js";
+import "../assets/styles/button.css";
+
 const api = BACKEND_HOST + "/routedata";
 
 //store id of parent component (Janitor or Collector)
@@ -16,7 +18,7 @@ export default function CollectorModal({ id }) {
 
     const [route_id, setRoute] = useState(0);
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
     useEffect(() => {
         async function fetchRoute() {
             let response = await fetch(api);
@@ -32,17 +34,18 @@ export default function CollectorModal({ id }) {
 
     const handleConfirm = async (e) => {
         e.preventDefault();
-        console.log("collector" + id)
+        console.log("collector" + id);
 
         try {
-            let data = await axios.put(`http://localhost:3001/collector/assign/${id}/${route_id}`)
+            await axios.put(
+                `http://localhost:3001/collector/assign/${id}/${route_id}`
+            );
+        } catch (err) {
+            alert("");
+            console.log(err);
         }
-        catch (err) {
-            alert("")
-            console.log(err)
-        }
-        window.location.reload(false)
-    }
+        window.location.reload(false);
+    };
 
     return (
         <>
@@ -54,27 +57,24 @@ export default function CollectorModal({ id }) {
                     <Modal.Title>Phân công công việc</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {
-                        data.map((route) => {
-                            return (
-                                <Form className="flex">
-                                    <Form.Check
-                                        className="flex"
-                                        inline
-                                        type="checkbox"
-                                        id="custom-box"
-                                        action
-                                            onChange = {(e) => {
-                                                e.preventDefault();
-                                                handleChange(route.id)
-                                            }}
-                                    />
-                                    <span>Route {route.id}</span>
-                                </Form>
-                            )
-                        })
-                    }
-
+                    {data.map((route) => {
+                        return (
+                            <Form className="flex">
+                                <Form.Check
+                                    className="flex"
+                                    inline
+                                    type="checkbox"
+                                    id="custom-box"
+                                    action
+                                    onChange={(e) => {
+                                        e.preventDefault();
+                                        handleChange(route.id);
+                                    }}
+                                />
+                                <span>Route {route.id}</span>
+                            </Form>
+                        );
+                    })}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>

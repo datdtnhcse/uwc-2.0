@@ -1,11 +1,10 @@
-
-import Collapse from 'react-bootstrap/Collapse';
 import { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import MCPCollapse from "../components/MCPCollapse";
+import { GeoFill, TrashFill } from "react-bootstrap-icons";
+import Button from "react-bootstrap/Button";
+import Collapse from "react-bootstrap/Collapse";
+import "../assets/styles/button.css";
 import DepotCollapse from "../components/DepotCollapse";
-import { BarChartLineFill, GeoFill, TrashFill } from "react-bootstrap-icons";
-import "../assets/styles/button.css"
+import MCPCollapse from "../components/MCPCollapse";
 
 export default function Overview() {
     if (!localStorage.getItem("user")) {
@@ -25,10 +24,7 @@ export default function Overview() {
                     <i class="bi-alarm"></i>
                     <span>
                         <TrashFill /> | MCP
-
                     </span>
-
-
                 </Button>
                 <Collapse className="p-1" in={mcpstatus}>
                     <div id="mcp">
@@ -51,7 +47,7 @@ export default function Overview() {
                 </Button>
 
                 <Collapse in={depotstatus}>
-                    <div id="depot" className='mb-5'>
+                    <div id="depot" className="mb-5">
                         <DepotCollapse />
                     </div>
                 </Collapse>

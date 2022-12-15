@@ -1,9 +1,9 @@
-import data from "../mockup_data/overviewMCP.json";
+import { useState } from "react";
+import { Button, Collapse, Form, ListGroup } from "react-bootstrap";
+import { BACKEND_HOST } from "../api/APIRoutes.js";
 import depotData from "../mockup_data/overviewDepot.json";
 import GTCData from "../mockup_data/overviewGTC.json";
-import { Form, Button, Collapse, ListGroup } from "react-bootstrap";
-import { useState, useEffect, useRef } from "react";
-import { BACKEND_HOST } from "../api/APIRoutes.js";
+import data from "../mockup_data/overviewMCP.json";
 
 const api = BACKEND_HOST + "/routedata/add";
 // import { List } from "react-bootstrap-icons";
@@ -76,8 +76,6 @@ export default function CreateRoute() {
         }
         addRoute();
 
-
-
         setRouteName("");
         setFromDepot("");
         setToGTC({
@@ -85,7 +83,6 @@ export default function CreateRoute() {
             name: "",
         });
         setMcps([]);
-
     };
 
     const handleReset = (e) => {

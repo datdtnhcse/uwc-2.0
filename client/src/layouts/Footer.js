@@ -14,7 +14,7 @@ export default function Footer() {
                             bằng một cái nhìn thoáng qua. Thông báo sẽ được gửi đến đúng người, một cách
                             tự động hoặc thủ công.
                         </p>
-                        <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
+                        <p><a href="https://facebook.com"><i class="fa fa-facebook-square mr-1"></i></a><a href="https://linkedin.com"><i class="fa fa-linkedin-square"></i></a></p>
                     </div>
                     <div class="col-lg-4 col-xs-12 links">
                         <h4 class="mt-lg-0 mt-sm-3">Liên hệ</h4>
