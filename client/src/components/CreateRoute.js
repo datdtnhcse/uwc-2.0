@@ -3,8 +3,9 @@ import depotData from "../mockup_data/overviewDepot.json";
 import GTCData from "../mockup_data/overviewGTC.json";
 import { Form, Button, Collapse, ListGroup } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
+import { BACKEND_HOST } from "../api/APIRoutes.js";
 
-const api = "http://localhost:3001/routedata/add";
+const api = BACKEND_HOST + "/routedata/add";
 // import { List } from "react-bootstrap-icons";
 
 // {

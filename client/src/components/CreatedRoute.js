@@ -1,11 +1,12 @@
 // import data from "../mockup_data/routedata.json";
-import Button from "react-bootstrap/button";
+import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Collapse from "react-bootstrap/Collapse";
 // import axios from "axios";
 
-import { useState, useEffect } from "react";
-const api = "http://localhost:3001/routedata";
+import { useEffect, useState } from "react";
+import { BACKEND_HOST } from "../api/APIRoutes.js";
+const api = BACKEND_HOST + "/routedata";
 
 // function DeleteRoute(name) {
 //     fetch("http://localhost:3001/routedata/del/${name}", {
@@ -18,7 +19,7 @@ const api = "http://localhost:3001/routedata";
 // }
 
 async function DeleteRoute(name) {
-    let response = await fetch(`http://localhost:3001/routedata/del/${name}`, {
+    let response = await fetch(`${BACKEND_HOST}/routedata/del/${name}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -90,8 +91,9 @@ export default function CreatedRoute() {
                                             </Card.Text>
                                             <Button
                                                 onClick={(e) => {
-                                                    e.preventDefault()
-                                                    DeleteRoute(item.name)}}
+                                                    e.preventDefault();
+                                                    DeleteRoute(item.name);
+                                                }}
                                                 variant="primary"
                                             >
                                                 Delete Route
