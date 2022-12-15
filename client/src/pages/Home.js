@@ -1,6 +1,12 @@
 import "../assets/styles/home.css"
 import "../assets/styles/button.css"
+const currentEmail = localStorage.getItem("user");
+
+
 export default function Home() {
+    if (!localStorage.getItem("user")) {
+        window.location.href = "/login";
+    }
     return (
         <div class="top-padding">
             <div class="d-flex justify-content-center">

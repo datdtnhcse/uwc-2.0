@@ -7,6 +7,9 @@ import { Cart, Truck } from "react-bootstrap-icons";
 import "../assets/styles/button.css";
 
 export default function Assign() {
+    if (!localStorage.getItem("user")) {
+        window.location.href = "/login";
+    }
     const [janitorstatus, setJanitorstatus] = useState(false);
     const [collectorstatus, setCollectorstatus] = useState(false);
     return (

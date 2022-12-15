@@ -12,9 +12,9 @@ import CreateRoute from "../components/CreateRoute";
 import Button from "react-bootstrap/esm/Button";
 
 export default function Routing() {
-
-
-
+    if (!localStorage.getItem("user")) {
+        window.location.href = "/login";
+    }
     return (
         <Container>
             <Row>

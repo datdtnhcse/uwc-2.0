@@ -8,10 +8,11 @@ export default function Footer() {
                     <div class="col-lg-6 col-xs-12 about-company">
                         <h2>Về chúng tôi</h2>
                         <p class="pr-5 text-white-50">
-                            This slope is, treacherous,
-                            This daydream, is dangerous,
-                            This slope is, treacherous,
-                            I, I, I, like it
+                            UWC 2.0 hứa hẹn sẽ thay thế được các ứng dụng mục đích chung để phục vụ cho
+                            các mục đích chuyên biệt trong công tác quản lý rác thải đô thị. Những người công
+                            nhân sẽ có thể nhìn thấy những thông tin quan trọng về lịch trình hôm nay chỉ
+                            bằng một cái nhìn thoáng qua. Thông báo sẽ được gửi đến đúng người, một cách
+                            tự động hoặc thủ công.
                         </p>
                         <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
                     </div>
@@ -39,11 +40,6 @@ export default function Footer() {
                     </div>
                     <div class="col-lg-2 col-xs-12 location">
                         <a href="https://telegram.org/" class="text-decoration-none"><h4>Báo lỗi</h4></a>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col copyright">
-                        <p class=""><small class="text-white-50">© 2022. All Rights Reserved.</small></p>
                     </div>
                 </div>
             </div>
