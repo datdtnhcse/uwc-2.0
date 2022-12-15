@@ -4,34 +4,34 @@ const prisma = require("./index.js");
 // for example:
 
 async function main() {
-    var mcps = require('../../client/src/mockup_data/overviewMCP.json');
+    var mcps = require("./mockup_data/overviewMCP.json");
     for (let mcp of mcps) {
         // console.log(mcp.capacity);
         await prisma.mCP.create({
             data: {
                 location: mcp.location,
-                capacity: mcp.capacity
-            }
+                capacity: mcp.capacity,
+            },
         });
     }
 
-    var depots = require('../../client/src/mockup_data/overviewDepot.json');
+    var depots = require("./mockup_data/overviewDepot.json");
     for (let key of Object.keys(depots)) {
-        for ( let vehicle of depots[key].vehicleList){
+        for (let vehicle of depots[key].vehicleList) {
             delete vehicle.id;
         }
         await prisma.depot.create({
             data: {
                 depotName: depots[key].depotName,
                 location: depots[key].location,
-                vehicles:{
-                    create: depots[key].vehicleList
-                }
-            }
+                vehicles: {
+                    create: depots[key].vehicleList,
+                },
+            },
         });
     }
 
-    var accounts = require('../../client/src/mockup_data/account.json');
+    var accounts = require("./mockup_data/account.json");
     for (let account of accounts) {
         await prisma.account.create({
             data: {
@@ -40,11 +40,11 @@ async function main() {
                 email: account.email,
                 phone: account.phone,
                 pass: account.pass,
-            }
+            },
         });
     }
 
-    var collectors = require('../../client/src/mockup_data/collector.json');
+    var collectors = require("./mockup_data/collector.json");
     for (let collector of collectors) {
         await prisma.collector.create({
             data: {
@@ -53,13 +53,13 @@ async function main() {
                 status: collector.status,
                 account: {
                     connect: {
-                        id: collector.accountId
-                    }
-                }
-            }
+                        id: collector.accountId,
+                    },
+                },
+            },
         });
     }
-    var janitors = require('../../client/src/mockup_data/janitor.json');
+    var janitors = require("./mockup_data/janitor.json");
     for (let janitor of janitors) {
         await prisma.janitor.create({
             data: {
@@ -68,71 +68,67 @@ async function main() {
                 status: janitor.status,
                 account: {
                     connect: {
-                        id: janitor.accountId
-                    }
-                }
-            }
+                        id: janitor.accountId,
+                    },
+                },
+            },
         });
     }
 
-
-    var gtcs = require('../../client/src/mockup_data/overviewGTC.json');
-    for ( let gtc of gtcs){
+    var gtcs = require("./mockup_data/overviewGTC.json");
+    for (let gtc of gtcs) {
         await prisma.gTC.create({
             data: {
                 name: gtc.name,
                 location: gtc.location,
-            }
+            },
         });
     }
 
-     var routes = require('../../client/src/mockup_data/routedata.json');
+    var routes = require("./mockup_data/routedata.json");
 
     for (let route of routes) {
         const fromid = await prisma.depot.findUnique({
-            where: { depotName: route.fromDepot},
+            where: { depotName: route.fromDepot },
         });
         await prisma.route.create({
-            data:{
+            data: {
                 name: route.routeName,
                 status: route.status,
                 fromDepot: {
                     connect: {
-                        id : fromid?.id
-                    }
+                        id: fromid?.id,
+                    },
                 },
                 togtc: {
                     connect: {
-                        id: route.toGTC.GTCID
-                    }
-                }
-            }
+                        id: route.toGTC.GTCID,
+                    },
+                },
+            },
         });
     }
     for (let route of routes) {
         const id = await prisma.route.findUnique({
             where: { name: route.routeName },
         });
-        for (let x of route.routeOfMCPsID){
+        for (let x of route.routeOfMCPsID) {
             await prisma.mCPinRoute.create({
-                data:{
-                    route:{
-                        connect:{
-                            id: id?.id
-                        }
+                data: {
+                    route: {
+                        connect: {
+                            id: id?.id,
+                        },
                     },
-                    mcp:{
-                        connect:{
+                    mcp: {
+                        connect: {
                             id: x,
-                        }
+                        },
                     },
-                }
+                },
             });
-
         }
-
     }
-
 }
 
 main();

@@ -38,7 +38,7 @@ export default function CollectorModal({ id }) {
 
         try {
             await axios.put(
-                `http://localhost:3001/collector/assign/${id}/${route_id}`
+                `${BACKEND_HOST}/collector/assign/${id}/${route_id}`
             );
         } catch (err) {
             alert("");

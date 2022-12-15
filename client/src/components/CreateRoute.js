@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Collapse, Form, ListGroup } from "react-bootstrap";
 import { BACKEND_HOST } from "../api/APIRoutes.js";
-import depotData from "../mockup_data/overviewDepot.json";
-import GTCData from "../mockup_data/overviewGTC.json";
-import data from "../mockup_data/overviewMCP.json";
+// import depotData from "../mockup_data/overviewDepot.json";
+// import GTCData from "../mockup_data/overviewGTC.json";
+// import data from "../mockup_data/overviewMCP.json";
 
 const api = BACKEND_HOST + "/routedata/add";
 // import { List } from "react-bootstrap-icons";
@@ -29,7 +29,16 @@ export default function CreateRoute() {
         name: "",
     });
     const [mcps, setMcps] = useState([]);
-    var status = "0";
+
+    const [mcpData, setMCPData] = useState([]);
+    useEffect(() => {
+        async function fetchMCP() {
+            let response = await fetch(BACKEND_HOST + "/overviewMCP");
+            response = await response.json();
+            setMCPData(response);
+        }
+        fetchMCP();
+    }, []);
 
     const handleMcps = (e) => {
         e.preventDefault();
@@ -38,6 +47,31 @@ export default function CreateRoute() {
         setMcps([...prevMcps, mcpValue]);
         console.log(mcps);
     };
+
+    const [depotData, setDepot] = useState([]);
+
+    useEffect(() => {
+        async function fetchDepot() {
+            let response = await fetch(BACKEND_HOST + "/overviewDepot");
+            response = await response.json();
+            setDepot(response);
+        }
+        fetchDepot();
+    }, []);
+
+    const [GTCData, setGtc] = useState([]);
+
+    useEffect(() => {
+        async function fetchGTC() {
+            let response = await fetch(BACKEND_HOST + "/overviewGTC");
+            response = await response.json();
+            setGtc(response);
+        }
+        fetchGTC();
+    }, []);
+
+    var status = "0";
+
 
     const handleToGTC = (id, name) => {
         setToGTC({
@@ -111,8 +145,8 @@ export default function CreateRoute() {
                     <div className="create-route-collapse">
                         <h4>List of MCPs</h4>
                         <ListGroup>
-                            {data.length > 0 ? (
-                                data.map((item, i) => (
+                            {mcpData.length > 0 ? (
+                                mcpData.map((item, i) => (
                                     <ListGroup.Item
                                         action
                                         onClick={handleMcps}
