@@ -1,0 +1,13 @@
+.abtn {
+    border-color: #72ab94 !important;
+    color: #72ab94 !important;
+    background-color: white !important;
+}
+ .abtn:hover {
+    background-color: whitesmoke !important;
+    border-color: #72ab94 !important;
+ }
+ .awidth {
+    width: 15%;
+    margin: 0.5%;
+}

@@ -3,8 +3,9 @@
 //     "name": "Le Tri Minh",
 //     "nearest-mcp": "MCP#6",
 //     "status": 1
-
 import AssignModal from "./AssignModal";
+import "../assets/styles/assigned.css";
+import { Modal, Button } from "react-bootstrap";
 
 // },
 export default function JanitorCard({ data }) {
@@ -18,7 +19,10 @@ export default function JanitorCard({ data }) {
                     }
                     <h5>ID: {data.id}</h5>
                     <h5>Nearest MCP: {data.nearest_mcp}</h5>
-                    <AssignModal id = {data.id}/>
+
+                    {
+                        data.status === 1 ? <AssignModal /> : <Button className="abtn"> Assigned </Button>
+                    }
                 </div>
             </div>
             
