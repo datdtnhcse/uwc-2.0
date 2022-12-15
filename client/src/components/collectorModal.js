@@ -14,6 +14,8 @@ export default function CollectorModal({ id }) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [route_id, setRoute] = useState(0);
+
     const [data, setData] = useState([])
     useEffect(() => {
         async function fetchRoute() {
@@ -23,6 +25,24 @@ export default function CollectorModal({ id }) {
         }
         fetchRoute()
     }, [])
+
+    const handleChange = (value) => {
+        setRoute(value);
+    };
+
+    const handleConfirm = async (e) => {
+        e.preventDefault();
+        console.log("collector" + id)
+
+        try {
+            let data = await axios.put(`http://localhost:3001/collector/assign/${id}/${route_id}`)
+        }
+        catch (err) {
+            alert("")
+            console.log(err)
+        }
+        window.location.reload(false)
+    }
 
     return (
         <>
@@ -35,13 +55,19 @@ export default function CollectorModal({ id }) {
                 </Modal.Header>
                 <Modal.Body>
                     {
-                        data.map((route, index) => {
+                        data.map((route) => {
                             return (
                                 <Form className="flex">
-                                    <Form.Check className="flex"
+                                    <Form.Check
+                                        className="flex"
                                         inline
                                         type="checkbox"
-                                        id="custom-switch"
+                                        id="custom-box"
+                                        action
+                                            onChange = {(e) => {
+                                                e.preventDefault();
+                                                handleChange(route.id)
+                                            }}
                                     />
                                     <span>Route {route.id}</span>
                                 </Form>
@@ -54,7 +80,7 @@ export default function CollectorModal({ id }) {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="success" onClick={handleClose}>
+                    <Button variant="success" onClick={handleConfirm}>
                         Confirm
                     </Button>
                 </Modal.Footer>

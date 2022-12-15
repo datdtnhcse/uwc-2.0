@@ -15,6 +15,8 @@ export default function AssignModal({ id }) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [mcp_id, setMcp] = useState(0);
+
     //data = MCP list
     const [data, setData] = useState([])
     useEffect(() => {
@@ -26,9 +28,22 @@ export default function AssignModal({ id }) {
         fetchMCP()
     }, [])
 
-    const [] = useState(false);
-    function Checkbox(){
+    const handleChange = (value) => {
+        setMcp(value);
+    };
 
+    const handleConfirm = async (e) => {
+        e.preventDefault();
+        console.log("janitor" + id)
+
+        try {
+            let data = await axios.put(`http://localhost:3001/janitor/assign/${id}/${mcp_id}`)
+        }
+        catch (err) {
+            alert("")
+            console.log(err)
+        }
+        window.location.reload(false)
     }
 
     return (
@@ -42,15 +57,19 @@ export default function AssignModal({ id }) {
                 </Modal.Header>
                 <Modal.Body>
                     {
-                        data.map((mcp, index) => {
+                        data.map((mcp) => {
                             return (
                                 <Form className="flex">
                                     <Form.Check
                                         className="flex"
                                         inline
-                                        type="radio"
-                                        id="custom-radio"
-                                        
+                                        type="checkbox"
+                                        id="custom-box"
+                                        action
+                                            onChange = {(e) => {
+                                                e.preventDefault();
+                                                handleChange(mcp.id)
+                                            }}
                                     />
                                     <span>MCP {mcp.id}</span>
                                 </Form>
@@ -62,11 +81,7 @@ export default function AssignModal({ id }) {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="success" onClick={handleClose}>
-                        {
-                            axios.put('http://localhost:3001/janitor/assign/3/2')
-
-                        }
+                    <Button variant="success" onClick = {handleConfirm}>
                         Confirm
                     </Button>
                 </Modal.Footer>
